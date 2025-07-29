@@ -1,0 +1,667 @@
+2025-07-29 21:30:04.210 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 21:30:04.470 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 21:30:04.504 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 21:30:04.509 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 21:30:04.510 +07:00 [INF] Hosting environment: Development
+2025-07-29 21:30:04.511 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 21:30:07.133 +07:00 [INF] Application is shutting down...
+2025-07-29 21:30:15.637 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 21:30:15.705 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 21:30:15.723 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 21:30:15.726 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 21:30:15.728 +07:00 [INF] Hosting environment: Development
+2025-07-29 21:30:15.728 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 21:30:19.257 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/ - null null
+2025-07-29 21:30:19.339 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 21:30:19.401 +07:00 [INF] HTTP GET / responded 404 in 92.0461 ms
+2025-07-29 21:30:19.414 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/ - 404 0 null 159.7482ms
+2025-07-29 21:30:19.426 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5066/, Response status code: 404
+2025-07-29 21:30:38.499 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger - null null
+2025-07-29 21:30:38.504 +07:00 [INF] HTTP GET /swagger responded 301 in 1.8097 ms
+2025-07-29 21:30:38.507 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger - 301 0 null 8.405ms
+2025-07-29 21:30:38.518 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 21:30:38.589 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 67.4542 ms
+2025-07-29 21:30:38.591 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 73.0967ms
+2025-07-29 21:30:38.670 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - null null
+2025-07-29 21:30:38.671 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - null null
+2025-07-29 21:30:38.671 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - null null
+2025-07-29 21:30:38.697 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-07-29 21:30:38.697 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-07-29 21:30:38.705 +07:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 28.6932 ms
+2025-07-29 21:30:38.711 +07:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 37.9267 ms
+2025-07-29 21:30:38.712 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-07-29 21:30:38.714 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 42.7642ms
+2025-07-29 21:30:38.717 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - 200 152034 text/css 47.2433ms
+2025-07-29 21:30:38.720 +07:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 41.3168 ms
+2025-07-29 21:30:38.733 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 61.5962ms
+2025-07-29 21:30:39.032 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 21:30:39.055 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - null null
+2025-07-29 21:30:39.060 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-07-29 21:30:39.062 +07:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 2.5983 ms
+2025-07-29 21:30:39.066 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - 200 628 image/png 10.4488ms
+2025-07-29 21:30:39.185 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 149.4592 ms
+2025-07-29 21:30:39.187 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 154.7843ms
+2025-07-29 21:31:04.478 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Files/upload - multipart/form-data; boundary=----WebKitFormBoundary9ibfRPbOizHTm3Up 152416
+2025-07-29 21:31:04.482 +07:00 [INF] CORS policy execution successful.
+2025-07-29 21:31:04.486 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.FilesController.Upload (WebApplication1)'
+2025-07-29 21:31:04.521 +07:00 [INF] Route matched with {action = "Upload", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller WebApplication1.Controllers.FilesController (WebApplication1).
+2025-07-29 21:31:04.591 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 21:31:04.612 +07:00 [INF] Executed action WebApplication1.Controllers.FilesController.Upload (WebApplication1) in 84.3875ms
+2025-07-29 21:31:04.614 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.FilesController.Upload (WebApplication1)'
+2025-07-29 21:31:04.616 +07:00 [INF] HTTP POST /api/Files/upload responded 200 in 135.7178 ms
+2025-07-29 21:31:04.619 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Files/upload - 200 null application/json; charset=utf-8 141.693ms
+2025-07-29 21:31:34.592 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Files/download/S3_4_2~1.pdf - null null
+2025-07-29 21:31:34.598 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.FilesController.Download (WebApplication1)'
+2025-07-29 21:31:34.603 +07:00 [INF] Route matched with {action = "Download", controller = "Files"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Download(System.String) on controller WebApplication1.Controllers.FilesController (WebApplication1).
+2025-07-29 21:31:34.614 +07:00 [INF] Executing FileContentResult, sending file with download name 'S3_4_2~1.pdf' ...
+2025-07-29 21:31:34.625 +07:00 [INF] Executed action WebApplication1.Controllers.FilesController.Download (WebApplication1) in 19.5414ms
+2025-07-29 21:31:34.627 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.FilesController.Download (WebApplication1)'
+2025-07-29 21:31:34.629 +07:00 [INF] HTTP GET /api/Files/download/S3_4_2~1.pdf responded 200 in 32.5018 ms
+2025-07-29 21:31:34.632 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Files/download/S3_4_2~1.pdf - 200 152225 application/octet-stream 39.8547ms
+2025-07-29 21:35:14.562 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Customers - null null
+2025-07-29 21:35:14.571 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-29 21:35:14.574 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-29 21:35:14.575 +07:00 [INF] HTTP GET /api/Customers responded 401 in 11.1591 ms
+2025-07-29 21:35:14.578 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Customers - 401 0 null 16.2881ms
+2025-07-29 22:16:20.883 +07:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [KienDoAn];
+2025-07-29 22:16:21.001 +07:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [KienDoAn] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-07-29 22:16:21.017 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-29 22:16:21.089 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2025-07-29 22:16:21.093 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-29 22:16:21.109 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-07-29 22:16:21.129 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-07-29 22:16:21.145 +07:00 [INF] Applying migration '20250729151154_addALlDb'.
+2025-07-29 22:16:21.191 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Customers] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [Email] nvarchar(max) NULL,
+    [Phone] nvarchar(max) NULL,
+    [Address] nvarchar(max) NULL,
+    [UserRole] int NOT NULL,
+    [ProfilePicture] nvarchar(max) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Customers] PRIMARY KEY ([Id])
+);
+2025-07-29 22:16:21.200 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Events] (
+    [Id] uniqueidentifier NOT NULL,
+    [EventName] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [EventDate] datetime2 NOT NULL,
+    [StartTime] time NOT NULL,
+    [EndTime] time NOT NULL,
+    [Location] nvarchar(max) NULL,
+    [Organizer] nvarchar(max) NULL,
+    [GroupId] uniqueidentifier NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Events] PRIMARY KEY ([Id])
+);
+2025-07-29 22:16:21.207 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [GroupMembers] (
+    [Id] uniqueidentifier NOT NULL,
+    [GroupId] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [GroupRole] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_GroupMembers] PRIMARY KEY ([Id])
+);
+2025-07-29 22:16:21.213 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Groups] (
+    [Id] uniqueidentifier NOT NULL,
+    [GroupName] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [Avt] nvarchar(max) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Groups] PRIMARY KEY ([Id])
+);
+2025-07-29 22:16:21.219 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Reminders] (
+    [Id] uniqueidentifier NOT NULL,
+    [Title] nvarchar(max) NULL,
+    [EnventId] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [ReminderDate] datetime2 NOT NULL,
+    [ReminderTime] time NOT NULL,
+    [IsCompleted] bit NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Reminders] PRIMARY KEY ([Id])
+);
+2025-07-29 22:16:21.229 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserEventStatus] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [EventId] uniqueidentifier NOT NULL,
+    [Status] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_UserEventStatus] PRIMARY KEY ([Id])
+);
+2025-07-29 22:16:21.237 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250729151154_addALlDb', N'8.0.7');
+2025-07-29 22:17:52.331 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 22:17:52.473 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 22:17:52.495 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 22:17:52.497 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 22:17:52.497 +07:00 [INF] Hosting environment: Development
+2025-07-29 22:17:52.498 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 22:18:02.870 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 22:18:02.958 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 63.4631 ms
+2025-07-29 22:18:02.962 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 93.389ms
+2025-07-29 22:18:03.036 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - null null
+2025-07-29 22:18:03.036 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - null null
+2025-07-29 22:18:03.037 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - null null
+2025-07-29 22:18:03.078 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-07-29 22:18:03.078 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-07-29 22:18:03.082 +07:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 35.9624 ms
+2025-07-29 22:18:03.082 +07:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 31.8147 ms
+2025-07-29 22:18:03.086 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 49.8733ms
+2025-07-29 22:18:03.088 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - 200 152034 text/css 50.879ms
+2025-07-29 22:18:03.095 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-07-29 22:18:03.098 +07:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 56.1194 ms
+2025-07-29 22:18:03.100 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 63.897ms
+2025-07-29 22:18:03.344 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 22:18:03.355 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - null null
+2025-07-29 22:18:03.359 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-07-29 22:18:03.362 +07:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 3.8302 ms
+2025-07-29 22:18:03.365 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - 200 628 image/png 9.5548ms
+2025-07-29 22:18:03.477 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 130.0298 ms
+2025-07-29 22:18:03.479 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.0835ms
+2025-07-29 22:18:23.645 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Customers - application/json 126
+2025-07-29 22:18:23.654 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 22:18:23.657 +07:00 [INF] CORS policy execution successful.
+2025-07-29 22:18:24.655 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-29 22:18:24.658 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-29 22:18:24.659 +07:00 [INF] HTTP POST /api/Customers responded 401 in 1009.8619 ms
+2025-07-29 22:18:24.662 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Customers - 401 0 null 1016.7721ms
+2025-07-29 22:19:58.534 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Customers - null null
+2025-07-29 22:19:58.548 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-29 22:19:58.554 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-29 22:19:58.557 +07:00 [INF] HTTP GET /api/Customers responded 401 in 14.2515 ms
+2025-07-29 22:19:58.561 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Customers - 401 0 null 26.7113ms
+2025-07-29 22:21:06.338 +07:00 [INF] Application is shutting down...
+2025-07-29 22:21:11.931 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 22:21:12.006 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 22:21:12.029 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 22:21:12.032 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 22:21:12.034 +07:00 [INF] Hosting environment: Development
+2025-07-29 22:21:12.035 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 22:21:17.759 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 22:21:17.838 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 58.4463 ms
+2025-07-29 22:21:17.843 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 84.9004ms
+2025-07-29 22:21:18.204 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 22:21:18.301 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 92.6446 ms
+2025-07-29 22:21:18.303 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.2672ms
+2025-07-29 22:21:24.215 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Customers - application/json 126
+2025-07-29 22:21:24.228 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 22:21:24.232 +07:00 [INF] CORS policy execution successful.
+2025-07-29 22:21:24.261 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-29 22:21:24.274 +07:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2025-07-29 22:21:24.276 +07:00 [INF] HTTP POST /api/Customers responded 302 in 52.1701 ms
+2025-07-29 22:21:24.282 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Customers - 302 0 null 66.5378ms
+2025-07-29 22:21:24.305 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/Account/Login?ReturnUrl=%2Fapi%2FCustomers - null null
+2025-07-29 22:21:24.327 +07:00 [INF] HTTP GET /Account/Login responded 404 in 9.0668 ms
+2025-07-29 22:21:24.330 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/Account/Login?ReturnUrl=%2Fapi%2FCustomers - 404 0 null 25.0434ms
+2025-07-29 22:21:24.337 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5066/Account/Login, Response status code: 404
+2025-07-29 22:24:18.524 +07:00 [INF] Application is shutting down...
+2025-07-29 22:24:23.557 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 22:24:23.622 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 22:24:23.646 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 22:24:23.649 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 22:24:23.650 +07:00 [INF] Hosting environment: Development
+2025-07-29 22:24:23.651 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 22:24:44.647 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Customers - application/json 126
+2025-07-29 22:24:44.681 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-29 22:24:44.687 +07:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2025-07-29 22:24:44.691 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Customers - 302 0 null 44.5664ms
+2025-07-29 22:24:44.703 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/Account/Login?ReturnUrl=%2Fapi%2FCustomers - null null
+2025-07-29 22:24:44.730 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 22:24:44.738 +07:00 [INF] HTTP GET /Account/Login responded 404 in 24.0483 ms
+2025-07-29 22:24:44.744 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/Account/Login?ReturnUrl=%2Fapi%2FCustomers - 404 0 null 40.2707ms
+2025-07-29 22:24:44.760 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5066/Account/Login, Response status code: 404
+2025-07-29 22:25:30.070 +07:00 [INF] Application is shutting down...
+2025-07-29 22:25:34.232 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 22:25:34.311 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 22:25:34.340 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 22:25:34.343 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 22:25:34.344 +07:00 [INF] Hosting environment: Development
+2025-07-29 22:25:34.344 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 22:25:58.302 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 22:25:58.386 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 50.4869 ms
+2025-07-29 22:25:58.391 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 89.1128ms
+2025-07-29 22:25:58.616 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 22:25:58.745 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 118.8335 ms
+2025-07-29 22:25:58.747 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 130.6118ms
+2025-07-29 22:26:03.239 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Customers - application/json 126
+2025-07-29 22:26:03.246 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 22:26:03.248 +07:00 [INF] CORS policy execution successful.
+2025-07-29 22:26:03.255 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Create (WebApplication1)'
+2025-07-29 22:26:03.280 +07:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Customers.CreateCustomerDto) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 22:26:04.924 +07:00 [INF] Executed DbCommand (70ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([Id], [Address], [CreatedAt], [Email], [FirstName], [IsDeleted], [LastName], [Phone], [ProfilePicture], [UserRole])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2025-07-29 22:26:04.953 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 22:26:04.981 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Create (WebApplication1) in 1694.4012ms
+2025-07-29 22:26:04.983 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Create (WebApplication1)'
+2025-07-29 22:26:04.985 +07:00 [INF] HTTP POST /api/Customers responded 201 in 1740.2723 ms
+2025-07-29 22:26:04.993 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Customers - 201 null application/json; charset=utf-8 1754.7266ms
+2025-07-29 22:26:58.296 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Customers - null null
+2025-07-29 22:26:58.299 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Get (WebApplication1)'
+2025-07-29 22:26:58.306 +07:00 [INF] Route matched with {action = "Get", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Get(WebApplication1.Shared.Results.FilterParams) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 22:26:59.201 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+2025-07-29 22:26:59.233 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[FirstName], [c].[LastName], [c].[Email], [c].[Phone], [c].[Address]
+FROM [Customers] AS [c]
+ORDER BY [c].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-07-29 22:26:59.238 +07:00 [INF] Executing OkObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 22:26:59.244 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Get (WebApplication1) in 937.1251ms
+2025-07-29 22:26:59.246 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Get (WebApplication1)'
+2025-07-29 22:26:59.248 +07:00 [INF] HTTP GET /api/Customers responded 200 in 948.4931 ms
+2025-07-29 22:26:59.250 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Customers - 200 null application/json; charset=utf-8 953.6609ms
+2025-07-29 22:28:55.243 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Customers/bb76948d-fe41-49d8-aa3c-6540983ba781 - application/json 131
+2025-07-29 22:28:55.249 +07:00 [INF] CORS policy execution successful.
+2025-07-29 22:28:55.251 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Update (WebApplication1)'
+2025-07-29 22:28:55.261 +07:00 [INF] Route matched with {action = "Update", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.String]]] Update(System.Guid, WebApplication1.Application.DTOs.Customers.UpdateCustomerDto) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 22:28:55.345 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Address], [c].[CreatedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[Phone], [c].[ProfilePicture], [c].[UserRole]
+FROM [Customers] AS [c]
+WHERE [c].[Id] = @__get_Item_0
+2025-07-29 22:28:55.364 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p9='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Customers] SET [Address] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FirstName] = @p3, [IsDeleted] = @p4, [LastName] = @p5, [Phone] = @p6, [ProfilePicture] = @p7, [UserRole] = @p8
+OUTPUT 1
+WHERE [Id] = @p9;
+2025-07-29 22:28:55.368 +07:00 [INF] Executing OkObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 22:28:55.370 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Update (WebApplication1) in 105.3523ms
+2025-07-29 22:28:55.371 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Update (WebApplication1)'
+2025-07-29 22:28:55.372 +07:00 [INF] HTTP PUT /api/Customers/bb76948d-fe41-49d8-aa3c-6540983ba781 responded 200 in 124.2483 ms
+2025-07-29 22:28:55.375 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Customers/bb76948d-fe41-49d8-aa3c-6540983ba781 - 200 null application/json; charset=utf-8 132.1604ms
+2025-07-29 22:29:12.582 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Customers/bb76948d-fe41-49d8-aa3c-6540983ba781 - null null
+2025-07-29 22:29:12.586 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.GetById (WebApplication1)'
+2025-07-29 22:29:12.592 +07:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] GetById(System.Guid) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 22:29:12.602 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Address], [c].[CreatedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[Phone], [c].[ProfilePicture], [c].[UserRole]
+FROM [Customers] AS [c]
+WHERE [c].[Id] = @__get_Item_0
+2025-07-29 22:29:12.606 +07:00 [INF] Executing OkObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 22:29:12.607 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.GetById (WebApplication1) in 13.3168ms
+2025-07-29 22:29:12.608 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.GetById (WebApplication1)'
+2025-07-29 22:29:12.609 +07:00 [INF] HTTP GET /api/Customers/bb76948d-fe41-49d8-aa3c-6540983ba781 responded 200 in 23.5183 ms
+2025-07-29 22:29:12.611 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Customers/bb76948d-fe41-49d8-aa3c-6540983ba781 - 200 null application/json; charset=utf-8 28.553ms
+2025-07-29 22:29:25.063 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/UserProfile - null null
+2025-07-29 22:29:25.065 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.UserProfileController.GetUserProfile (WebApplication1)'
+2025-07-29 22:29:25.068 +07:00 [INF] Route matched with {action = "GetUserProfile", controller = "UserProfile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserProfile() on controller WebApplication1.Controllers.UserProfileController (WebApplication1).
+2025-07-29 22:29:25.078 +07:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 22:29:25.079 +07:00 [INF] Executed action WebApplication1.Controllers.UserProfileController.GetUserProfile (WebApplication1) in 8.3172ms
+2025-07-29 22:29:25.080 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.UserProfileController.GetUserProfile (WebApplication1)'
+2025-07-29 22:29:25.081 +07:00 [INF] HTTP GET /api/UserProfile responded 401 in 16.8362 ms
+2025-07-29 22:29:25.084 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/UserProfile - 401 null application/json; charset=utf-8 21.0663ms
+2025-07-29 23:02:10.584 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 23:02:10.748 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 23:02:10.776 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 23:02:10.778 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 23:02:10.779 +07:00 [INF] Hosting environment: Development
+2025-07-29 23:02:10.780 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 23:02:35.194 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/ - null null
+2025-07-29 23:02:35.339 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 23:02:35.359 +07:00 [INF] HTTP GET / responded 404 in 55.7962 ms
+2025-07-29 23:02:35.394 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/ - 404 0 null 203.589ms
+2025-07-29 23:02:35.440 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5066/, Response status code: 404
+2025-07-29 23:02:38.201 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger - null null
+2025-07-29 23:02:38.211 +07:00 [INF] HTTP GET /swagger responded 301 in 1.5855 ms
+2025-07-29 23:02:38.216 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger - 301 0 null 13.7195ms
+2025-07-29 23:02:38.239 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 23:02:38.322 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 74.7346 ms
+2025-07-29 23:02:38.324 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 85.5462ms
+2025-07-29 23:02:38.607 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 23:02:38.752 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 142.5319 ms
+2025-07-29 23:02:38.754 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 147.1423ms
+2025-07-29 23:02:52.323 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Customers - application/json 126
+2025-07-29 23:02:52.331 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:02:52.337 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Create (WebApplication1)'
+2025-07-29 23:02:52.381 +07:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Customers.CreateCustomerDto) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 23:02:53.777 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([Id], [Address], [CreatedAt], [Email], [FirstName], [IsDeleted], [LastName], [Phone], [ProfilePicture], [UserRole])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2025-07-29 23:02:53.805 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:02:53.833 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Create (WebApplication1) in 1445.1137ms
+2025-07-29 23:02:53.835 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Create (WebApplication1)'
+2025-07-29 23:02:53.837 +07:00 [INF] HTTP POST /api/Customers responded 201 in 1507.9651 ms
+2025-07-29 23:02:53.844 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Customers - 201 null application/json; charset=utf-8 1520.9164ms
+2025-07-29 23:02:59.484 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Events - application/json 157
+2025-07-29 23:02:59.491 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:02:59.493 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.EventsController.Create (WebApplication1)'
+2025-07-29 23:02:59.499 +07:00 [INF] Route matched with {action = "Create", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Events.CreateEventDto) on controller WebApplication1.Controllers.EventsController (WebApplication1).
+2025-07-29 23:02:59.593 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Time), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Events] ([Id], [CreatedAt], [Description], [EndTime], [EventDate], [EventName], [GroupId], [IsDeleted], [Location], [Organizer], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-07-29 23:02:59.598 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:02:59.601 +07:00 [INF] Executed action WebApplication1.Controllers.EventsController.Create (WebApplication1) in 99.703ms
+2025-07-29 23:02:59.602 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.EventsController.Create (WebApplication1)'
+2025-07-29 23:02:59.603 +07:00 [INF] HTTP POST /api/Events responded 201 in 112.9687 ms
+2025-07-29 23:02:59.605 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Events - 201 null application/json; charset=utf-8 120.9034ms
+2025-07-29 23:03:23.831 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Groups - application/json 49
+2025-07-29 23:03:23.834 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:03:23.834 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupsController.Create (WebApplication1)'
+2025-07-29 23:03:23.841 +07:00 [INF] Route matched with {action = "Create", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Groups.CreateGroupDto) on controller WebApplication1.Controllers.GroupsController (WebApplication1).
+2025-07-29 23:03:23.897 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Groups] ([Id], [Avt], [CreatedAt], [Description], [GroupName], [IsDeleted])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-07-29 23:03:23.901 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:03:23.905 +07:00 [INF] Executed action WebApplication1.Controllers.GroupsController.Create (WebApplication1) in 62.2957ms
+2025-07-29 23:03:23.906 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupsController.Create (WebApplication1)'
+2025-07-29 23:03:23.907 +07:00 [INF] HTTP POST /api/Groups responded 201 in 73.3318 ms
+2025-07-29 23:03:23.909 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Groups - 201 null application/json; charset=utf-8 78.3814ms
+2025-07-29 23:03:31.712 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Reminders - application/json 97
+2025-07-29 23:03:31.715 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:03:31.716 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.RemindersController.Create (WebApplication1)'
+2025-07-29 23:03:31.723 +07:00 [INF] Route matched with {action = "Create", controller = "Reminders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Reminders.CreateReminderDto) on controller WebApplication1.Controllers.RemindersController (WebApplication1).
+2025-07-29 23:03:31.740 +07:00 [INF] Executed action WebApplication1.Controllers.RemindersController.Create (WebApplication1) in 15.4973ms
+2025-07-29 23:03:31.742 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.RemindersController.Create (WebApplication1)'
+2025-07-29 23:03:31.743 +07:00 [ERR] An unhandled exception has occurred.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CreateReminderDto -> Reminders
+WebApplication1.Application.DTOs.Reminders.CreateReminderDto -> WebApplication1.Domain.Entities.Reminders
+
+Type Map configuration:
+CreateReminderDto -> Reminders
+WebApplication1.Application.DTOs.Reminders.CreateReminderDto -> WebApplication1.Domain.Entities.Reminders
+
+Destination Member:
+UserId
+
+ ---> System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at lambda_method322(Closure, Object, Reminders, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method322(Closure, Object, Reminders, ResolutionContext)
+   at WebApplication1.Application.Services.ReminderService.CreateReminderAsync(CreateReminderDto createReminderDto) in E:\WebApplication1\Application\Services\ReminderService.cs:line 42
+   at WebApplication1.Controllers.RemindersController.Create(CreateReminderDto createReminderDto) in E:\WebApplication1\Controllers\RemindersController.cs:line 41
+   at lambda_method317(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at WebApplication1.Shared.Middlewares.GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in E:\WebApplication1\Shared\Middlewares\GlobalExceptionHandlingMiddleware.cs:line 22
+2025-07-29 23:03:31.774 +07:00 [ERR] HTTP POST /api/Reminders responded 500 in 59.2172 ms
+2025-07-29 23:03:31.777 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Reminders - 500 null application/json; charset=utf-8 64.3072ms
+2025-07-29 23:03:39.290 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/UserEventStatuses - application/json 99
+2025-07-29 23:03:39.293 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:03:39.293 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.UserEventStatusesController.Create (WebApplication1)'
+2025-07-29 23:03:39.298 +07:00 [INF] Route matched with {action = "Create", controller = "UserEventStatuses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.UserEventStatus.CreateUserEventStatusDto) on controller WebApplication1.Controllers.UserEventStatusesController (WebApplication1).
+2025-07-29 23:03:39.312 +07:00 [INF] Executed action WebApplication1.Controllers.UserEventStatusesController.Create (WebApplication1) in 10.7294ms
+2025-07-29 23:03:39.314 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.UserEventStatusesController.Create (WebApplication1)'
+2025-07-29 23:03:39.316 +07:00 [ERR] An unhandled exception has occurred.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CreateUserEventStatusDto -> UserEventStatus
+WebApplication1.Application.DTOs.UserEventStatus.CreateUserEventStatusDto -> WebApplication1.Domain.Entities.UserEventStatus
+
+Type Map configuration:
+CreateUserEventStatusDto -> UserEventStatus
+WebApplication1.Application.DTOs.UserEventStatus.CreateUserEventStatusDto -> WebApplication1.Domain.Entities.UserEventStatus
+
+Destination Member:
+UserId
+
+ ---> System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at lambda_method331(Closure, Object, UserEventStatus, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method331(Closure, Object, UserEventStatus, ResolutionContext)
+   at WebApplication1.Application.Services.UserEventStatusService.CreateUserEventStatusAsync(CreateUserEventStatusDto createUserEventStatusDto) in E:\WebApplication1\Application\Services\UserEventStatusService.cs:line 42
+   at WebApplication1.Controllers.UserEventStatusesController.Create(CreateUserEventStatusDto createUserEventStatusDto) in E:\WebApplication1\Controllers\UserEventStatusesController.cs:line 41
+   at lambda_method326(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at WebApplication1.Shared.Middlewares.GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in E:\WebApplication1\Shared\Middlewares\GlobalExceptionHandlingMiddleware.cs:line 22
+2025-07-29 23:03:39.328 +07:00 [ERR] HTTP POST /api/UserEventStatuses responded 500 in 35.2688 ms
+2025-07-29 23:03:39.330 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/UserEventStatuses - 500 null application/json; charset=utf-8 39.9126ms
+2025-07-29 23:09:20.737 +07:00 [INF] Application is shutting down...
+2025-07-29 23:14:17.439 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 23:14:17.512 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 23:14:17.542 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 23:14:17.546 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 23:14:17.547 +07:00 [INF] Hosting environment: Development
+2025-07-29 23:14:17.548 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 23:14:19.938 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 23:14:20.015 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 48.3665 ms
+2025-07-29 23:14:20.020 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 82.9952ms
+2025-07-29 23:14:20.261 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 23:14:20.381 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 115.4746 ms
+2025-07-29 23:14:20.386 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 124.8592ms
+2025-07-29 23:14:25.014 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Customers - application/json 126
+2025-07-29 23:14:25.034 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 23:14:25.038 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:14:25.052 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Create (WebApplication1)'
+2025-07-29 23:14:25.084 +07:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Customers.CreateCustomerDto) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 23:14:26.149 +07:00 [INF] Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([Id], [Address], [CreatedAt], [Email], [FirstName], [IsDeleted], [LastName], [Phone], [ProfilePicture], [UserRole])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2025-07-29 23:14:26.201 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:14:26.245 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Create (WebApplication1) in 1154.5157ms
+2025-07-29 23:14:26.248 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Create (WebApplication1)'
+2025-07-29 23:14:26.252 +07:00 [INF] HTTP POST /api/Customers responded 201 in 1222.0413 ms
+2025-07-29 23:14:26.262 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Customers - 201 null application/json; charset=utf-8 1248.0374ms
+2025-07-29 23:14:30.863 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Customers - null null
+2025-07-29 23:14:30.867 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Get (WebApplication1)'
+2025-07-29 23:14:30.875 +07:00 [INF] Route matched with {action = "Get", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Get(WebApplication1.Shared.Results.FilterParams) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 23:14:31.484 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+2025-07-29 23:14:31.522 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[FirstName], [c].[LastName], [c].[Email], [c].[Phone], [c].[Address]
+FROM [Customers] AS [c]
+ORDER BY [c].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-07-29 23:14:31.529 +07:00 [INF] Executing OkObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:14:31.538 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Get (WebApplication1) in 661.8292ms
+2025-07-29 23:14:31.540 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Get (WebApplication1)'
+2025-07-29 23:14:31.541 +07:00 [INF] HTTP GET /api/Customers responded 200 in 674.7784 ms
+2025-07-29 23:14:31.543 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Customers - 200 null application/json; charset=utf-8 679.9295ms
+2025-07-29 23:14:56.372 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/GroupMembers - application/json 151
+2025-07-29 23:14:56.375 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:14:56.376 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:14:56.382 +07:00 [INF] Route matched with {action = "Create", controller = "GroupMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.GroupMembers.CreateGroupMemberDto) on controller WebApplication1.Controllers.GroupMembersController (WebApplication1).
+2025-07-29 23:14:56.442 +07:00 [INF] Executed action WebApplication1.Controllers.GroupMembersController.Create (WebApplication1) in 58.2ms
+2025-07-29 23:14:56.444 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:14:56.445 +07:00 [ERR] An unhandled exception has occurred.
+FluentValidation.AsyncValidatorInvokedSynchronouslyException: Validator "CreateGroupMemberDtoValidator" can't be used with ASP.NET automatic validation as it contains asynchronous rules. ASP.NET's validation pipeline is not asynchronous and can't invoke asynchronous rules. Remove the asynchronous rules in order for this validator to run.
+   at FluentValidation.AbstractValidator`1.Validate(ValidationContext`1 context) in /_/src/FluentValidation/AbstractValidator.cs:line 207
+   at FluentValidation.AbstractValidator`1.FluentValidation.IValidator.Validate(IValidationContext context) in /_/src/FluentValidation/AbstractValidator.cs:line 153
+   at FluentValidation.AspNetCore.FluentValidationModelValidator.Validate(ModelValidationContext mvContext) in /_/src/FluentValidation.AspNetCore/FluentValidationModelValidatorProvider.cs:line 146
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>n__1(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>c__DisplayClass2_0.<Validate>g__BaseValidate|0() in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 45
+   at FluentValidation.AspNetCore.FluentValidationVisitor.ValidateInternal(ModelMetadata metadata, String key, Object model, Func`1 continuation) in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 63
+   at FluentValidation.AspNetCore.FluentValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container) in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 47
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at WebApplication1.Shared.Middlewares.GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in E:\WebApplication1\Shared\Middlewares\GlobalExceptionHandlingMiddleware.cs:line 22
+2025-07-29 23:14:56.473 +07:00 [ERR] HTTP POST /api/GroupMembers responded 500 in 99.2928 ms
+2025-07-29 23:14:56.476 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/GroupMembers - 500 null application/json; charset=utf-8 104.0377ms
+2025-07-29 23:17:15.766 +07:00 [INF] Application is shutting down...
+2025-07-29 23:17:21.518 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 23:17:21.594 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 23:17:21.624 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 23:17:21.626 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 23:17:21.627 +07:00 [INF] Hosting environment: Development
+2025-07-29 23:17:21.627 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 23:17:37.372 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Groups - application/json 49
+2025-07-29 23:17:37.416 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 23:17:37.418 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:17:37.424 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupsController.Create (WebApplication1)'
+2025-07-29 23:17:37.458 +07:00 [INF] Route matched with {action = "Create", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.Groups.CreateGroupDto) on controller WebApplication1.Controllers.GroupsController (WebApplication1).
+2025-07-29 23:17:38.456 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Groups] ([Id], [Avt], [CreatedAt], [Description], [GroupName], [IsDeleted])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-07-29 23:17:38.485 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:17:38.525 +07:00 [INF] Executed action WebApplication1.Controllers.GroupsController.Create (WebApplication1) in 1058.9648ms
+2025-07-29 23:17:38.530 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupsController.Create (WebApplication1)'
+2025-07-29 23:17:38.534 +07:00 [INF] HTTP POST /api/Groups responded 201 in 1128.8843 ms
+2025-07-29 23:17:38.549 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Groups - 201 null application/json; charset=utf-8 1175.0987ms
+2025-07-29 23:17:57.476 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Customers - null null
+2025-07-29 23:17:57.502 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.CustomersController.Get (WebApplication1)'
+2025-07-29 23:17:57.512 +07:00 [INF] Route matched with {action = "Get", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Get(WebApplication1.Shared.Results.FilterParams) on controller WebApplication1.Controllers.CustomersController (WebApplication1).
+2025-07-29 23:17:58.006 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+2025-07-29 23:17:58.039 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[FirstName], [c].[LastName], [c].[Email], [c].[Phone], [c].[Address]
+FROM [Customers] AS [c]
+ORDER BY [c].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-07-29 23:17:58.045 +07:00 [INF] Executing OkObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:17:58.060 +07:00 [INF] Executed action WebApplication1.Controllers.CustomersController.Get (WebApplication1) in 544.6529ms
+2025-07-29 23:17:58.062 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.CustomersController.Get (WebApplication1)'
+2025-07-29 23:17:58.064 +07:00 [INF] HTTP GET /api/Customers responded 200 in 569.2166 ms
+2025-07-29 23:17:58.066 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Customers - 200 null application/json; charset=utf-8 590.1737ms
+2025-07-29 23:18:09.306 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/GroupMembers - application/json 151
+2025-07-29 23:18:09.316 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:18:09.321 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:18:09.327 +07:00 [INF] Route matched with {action = "Create", controller = "GroupMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.GroupMembers.CreateGroupMemberDto) on controller WebApplication1.Controllers.GroupMembersController (WebApplication1).
+2025-07-29 23:18:09.384 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [GroupMembers] ([Id], [CreatedAt], [GroupId], [GroupRole], [IsDeleted], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-07-29 23:18:09.389 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:18:09.395 +07:00 [INF] Executed action WebApplication1.Controllers.GroupMembersController.Create (WebApplication1) in 65.2419ms
+2025-07-29 23:18:09.396 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:18:09.397 +07:00 [INF] HTTP POST /api/GroupMembers responded 201 in 86.7112 ms
+2025-07-29 23:18:09.399 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/GroupMembers - 201 null application/json; charset=utf-8 92.1094ms
+2025-07-29 23:18:15.051 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/GroupMembers - null null
+2025-07-29 23:18:15.053 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupMembersController.Get (WebApplication1)'
+2025-07-29 23:18:15.060 +07:00 [INF] Route matched with {action = "Get", controller = "GroupMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Get(WebApplication1.Shared.Results.FilterParams) on controller WebApplication1.Controllers.GroupMembersController (WebApplication1).
+2025-07-29 23:18:15.099 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupMembers] AS [g]
+2025-07-29 23:18:15.116 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[GroupId], [g].[UserId]
+FROM [GroupMembers] AS [g]
+ORDER BY [g].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-07-29 23:18:15.122 +07:00 [INF] Executing OkObjectResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:18:15.127 +07:00 [INF] Executed action WebApplication1.Controllers.GroupMembersController.Get (WebApplication1) in 64.366ms
+2025-07-29 23:18:15.129 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupMembersController.Get (WebApplication1)'
+2025-07-29 23:18:15.130 +07:00 [INF] HTTP GET /api/GroupMembers responded 200 in 77.3366 ms
+2025-07-29 23:18:15.132 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/GroupMembers - 200 null application/json; charset=utf-8 81.9609ms
+2025-07-29 23:21:11.914 +07:00 [INF] Application is shutting down...
+2025-07-29 23:21:16.983 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-29 23:21:17.088 +07:00 [WRN] The WebRootPath was not found: E:\WebApplication1\wwwroot. Static files may be unavailable.
+2025-07-29 23:21:17.124 +07:00 [INF] Now listening on: http://localhost:5066
+2025-07-29 23:21:17.128 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-29 23:21:17.131 +07:00 [INF] Hosting environment: Development
+2025-07-29 23:21:17.133 +07:00 [INF] Content root path: E:\WebApplication1
+2025-07-29 23:21:22.979 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/GroupMembers - application/json 151
+2025-07-29 23:21:23.023 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-07-29 23:21:23.027 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:21:23.034 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:21:23.063 +07:00 [INF] Route matched with {action = "Create", controller = "GroupMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.GroupMembers.CreateGroupMemberDto) on controller WebApplication1.Controllers.GroupMembersController (WebApplication1).
+2025-07-29 23:21:24.127 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [GroupMembers] ([Id], [CreatedAt], [GroupId], [GroupRole], [IsDeleted], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-07-29 23:21:24.158 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:21:24.195 +07:00 [INF] Executed action WebApplication1.Controllers.GroupMembersController.Create (WebApplication1) in 1125.6999ms
+2025-07-29 23:21:24.200 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:21:24.206 +07:00 [INF] HTTP POST /api/GroupMembers responded 201 in 1191.7950 ms
+2025-07-29 23:21:24.222 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/GroupMembers - 201 null application/json; charset=utf-8 1242.3766ms
+2025-07-29 23:21:36.235 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/GroupMembers - application/json 151
+2025-07-29 23:21:36.251 +07:00 [INF] CORS policy execution successful.
+2025-07-29 23:21:36.253 +07:00 [INF] Executing endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:21:36.255 +07:00 [INF] Route matched with {action = "Create", controller = "GroupMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WebApplication1.Shared.Results.ApiResponse`1[System.Object]]] Create(WebApplication1.Application.DTOs.GroupMembers.CreateGroupMemberDto) on controller WebApplication1.Controllers.GroupMembersController (WebApplication1).
+2025-07-29 23:21:36.322 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [GroupMembers] ([Id], [CreatedAt], [GroupId], [GroupRole], [IsDeleted], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-07-29 23:21:36.324 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'WebApplication1.Shared.Results.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-29 23:21:36.326 +07:00 [INF] Executed action WebApplication1.Controllers.GroupMembersController.Create (WebApplication1) in 67.0197ms
+2025-07-29 23:21:36.328 +07:00 [INF] Executed endpoint 'WebApplication1.Controllers.GroupMembersController.Create (WebApplication1)'
+2025-07-29 23:21:36.328 +07:00 [INF] HTTP POST /api/GroupMembers responded 201 in 79.3803 ms
+2025-07-29 23:21:36.330 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/GroupMembers - 201 null application/json; charset=utf-8 95.045ms
+2025-07-29 23:21:38.662 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - null null
+2025-07-29 23:21:38.706 +07:00 [INF] HTTP GET /swagger/index.html responded 200 in 40.4032 ms
+2025-07-29 23:21:38.708 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - 200 null text/html;charset=utf-8 45.9263ms
+2025-07-29 23:21:38.962 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - null null
+2025-07-29 23:21:39.067 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 100.4822 ms
+2025-07-29 23:21:39.069 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 106.9672ms

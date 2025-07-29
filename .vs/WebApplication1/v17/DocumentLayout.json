@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\shared\\results\\filterparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:shared\\results\\filterparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\infrastructure\\data\\implement\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:infrastructure\\data\\implement\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\shared\\results\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:shared\\results\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\shared\\results\\paginatedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:shared\\results\\paginatedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\shared\\errorcodes\\errorcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:shared\\errorcodes\\errorcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\infrastructure\\data\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:infrastructure\\data\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\domain\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:domain\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|e:\\webapplication1\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA2ECCF-4AD4-4170-962A-522264B76842}|WebApplication1.csproj|solutionrelative:infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Shared\\Results\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "Shared\\Results\\ApiResponse.cs",
+              "ToolTip": "E:\\WebApplication1\\Shared\\Results\\ApiResponse.cs",
+              "RelativeToolTip": "Shared\\Results\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T06:00:21.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ErrorCode.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Shared\\ErrorCodes\\ErrorCode.cs",
+              "RelativeDocumentMoniker": "Shared\\ErrorCodes\\ErrorCode.cs",
+              "ToolTip": "E:\\WebApplication1\\Shared\\ErrorCodes\\ErrorCode.cs",
+              "RelativeToolTip": "Shared\\ErrorCodes\\ErrorCode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:58:04.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaginatedResult.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Shared\\Results\\PaginatedResult.cs",
+              "RelativeDocumentMoniker": "Shared\\Results\\PaginatedResult.cs",
+              "ToolTip": "E:\\WebApplication1\\Shared\\Results\\PaginatedResult.cs",
+              "RelativeToolTip": "Shared\\Results\\PaginatedResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:55:47.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FilterParams.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Shared\\Results\\FilterParams.cs",
+              "RelativeDocumentMoniker": "Shared\\Results\\FilterParams.cs",
+              "ToolTip": "E:\\WebApplication1\\Shared\\Results\\FilterParams.cs",
+              "RelativeToolTip": "Shared\\Results\\FilterParams.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:55:33.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Infrastructure\\Data\\Implement\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\Implement\\BaseRepository.cs",
+              "ToolTip": "E:\\WebApplication1\\Infrastructure\\Data\\Implement\\BaseRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\Implement\\BaseRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA9wCAAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:54:15.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Infrastructure\\Data\\Repositories\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\Repositories\\IBaseRepository.cs",
+              "ToolTip": "E:\\WebApplication1\\Infrastructure\\Data\\Repositories\\IBaseRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\Repositories\\IBaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:53:32.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Domain\\Entities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\BaseEntity.cs",
+              "ToolTip": "E:\\WebApplication1\\Domain\\Entities\\BaseEntity.cs",
+              "RelativeToolTip": "Domain\\Entities\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:53:12.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\WebApplication1\\Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\WebApplication1\\Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:51:57.895Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
