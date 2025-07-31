@@ -9,7 +9,7 @@ using WebApplication1.Shared.Results;
 
 namespace WebApplication1.Controllers
 {
-    // [Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class UserProfileController : ControllerBase
@@ -21,16 +21,16 @@ namespace WebApplication1.Controllers
             _userProfileService = userProfileService;
         }
 
-        [HttpGet]
+        [HttpGet("me")]
         public async Task<IActionResult> GetUserProfile()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Or ClaimTypes.Name for Username
-            if (string.IsNullOrEmpty(userId))
+            var userName = User.FindFirstValue(ClaimTypes.Name); // Changed to ClaimTypes.Name
+            if (string.IsNullOrEmpty(userName))
             {
                 return Unauthorized(ApiResponse<object>.Fail("User not authenticated."));
             }
 
-            var userProfile = await _userProfileService.GetUserProfileAsync(userId);
+            var userProfile = await _userProfileService.GetUserProfileAsync(userName); // Pass userName
             if (userProfile == null)
             {
                 return NotFound(ApiResponse<object>.Fail($"User profile not found.{ErrorCode.NotFound}"));
@@ -39,16 +39,16 @@ namespace WebApplication1.Controllers
             return Ok(ApiResponse<object>.Ok(userProfile));
         }
 
-        [HttpPut]
+        [HttpPut("update")]
         public async Task<IActionResult> UpdateUserProfile([FromBody] UpdateUserProfileDto updateUserProfileDto)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Or ClaimTypes.Name for Username
-            if (string.IsNullOrEmpty(userId))
+            var userName = User.FindFirstValue(ClaimTypes.Name); // Changed to ClaimTypes.Name
+            if (string.IsNullOrEmpty(userName))
             {
                 return Unauthorized(ApiResponse<object>.Fail("User not authenticated."));
             }
 
-            var result = await _userProfileService.UpdateUserProfileAsync(userId, updateUserProfileDto);
+            var result = await _userProfileService.UpdateUserProfileAsync(userName, updateUserProfileDto); // Pass userName
             if (!result)
             {
                 return BadRequest(ApiResponse<object>.Fail($"Failed to update user profile.{ErrorCode.ValidationError}"));

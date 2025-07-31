@@ -7,16 +7,14 @@ namespace WebApplication1.Domain.Entities
 {
     public class EventsEnitity : BaseEntity
     {
-        public string? EventName { get; set; } = null!;
+        public string? Title { get; set; }
         public string? Description { get; set; }
-        public DateTime EventDate { get; set; }
-
-        public TimeOnly StartTime { get; set; }
-        public TimeOnly EndTime { get; set; }
-        public string? Location { get; set; } = null!;
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string? Location { get; set; }
         public string? Organizer { get; set; }
-        
+        public string? Priority { get; set; }
         public Guid GroupId { get; set; }
-        
+        public List<Guid> Attendees { get; set; } = new List<Guid>();
     }
 }

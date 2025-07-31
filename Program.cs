@@ -60,7 +60,8 @@ namespace WebApplication1
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             builder.Services.AddScoped<IUserProfileService, UserProfileService>();
-            builder.Services.AddScoped<ICustomerService, CustomerService>();
+            builder.Services.AddScoped<IApplicationUserService, ApplicationUserService>(); // Added this line
+            builder.Services.AddScoped<INotificationService, NotificationService>(); // Added this line
             builder.Services.AddScoped<IEventService, EventService>();
             builder.Services.AddScoped<IGroupService, GroupService>();
             builder.Services.AddScoped<IGroupMemberService, GroupMemberService>();
@@ -123,6 +124,8 @@ namespace WebApplication1
 
             app.UseWebSockets();
 
+            
+
             app.Use(async (context, next) =>
             {
                 if (context.Request.Path == "/ws")
@@ -155,8 +158,8 @@ namespace WebApplication1
 
             app.UseGlobalExceptionHandling();
 
-            // app.UseAuthentication();
-            // app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
 
             app.MapControllers();

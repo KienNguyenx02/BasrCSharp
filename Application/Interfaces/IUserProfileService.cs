@@ -5,7 +5,7 @@ namespace WebApplication1.Application.Interfaces
 {
     public interface IUserProfileService
     {
-        Task<UserProfileDto> GetUserProfileAsync(string userId);
-        Task<bool> UpdateUserProfileAsync(string userId, UpdateUserProfileDto updateUserProfileDto);
+        Task<UserProfileDto> GetUserProfileAsync(string userName);
+        Task<bool> UpdateUserProfileAsync(string userName, UpdateUserProfileDto updateUserProfileDto);
     }
 }

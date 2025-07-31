@@ -4,13 +4,13 @@ using WebApplication1.Domain.Entities;
 
 namespace WebApplication1.Infrastructure.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Notifications> Notifications { get; set; }
         public DbSet<EventsEnitity> Events { get; set; }
         public DbSet<GroupsEntity> Groups { get; set; }
         public DbSet<GroupMembers> GroupMembers { get; set; }

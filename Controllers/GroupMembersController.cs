@@ -35,11 +35,22 @@ namespace WebApplication1.Controllers
             return Ok(ApiResponse<object>.Ok(groupMemberDto));
         }
 
+        [HttpGet("ByGroup/{groupId}")]
+        public async Task<ActionResult<ApiResponse<object>>> GetMembersByGroupId(Guid groupId)
+        {
+            var result = await _groupMemberService.GetGroupMembersByGroupIdAsync(groupId);
+            return Ok(ApiResponse<object>.Ok(result));
+        }
+
         [HttpPost]
         public async Task<ActionResult<ApiResponse<object>>> Create([FromBody] CreateGroupMemberDto createGroupMemberDto)
         {
-            var groupMemberDto = await _groupMemberService.CreateGroupMemberAsync(createGroupMemberDto);
-            return CreatedAtAction(nameof(GetById), new { id = groupMemberDto.Id }, ApiResponse<object>.Ok(groupMemberDto));
+            var result = await _groupMemberService.CreateGroupMemberAsync(createGroupMemberDto);
+            if (!result.Success)
+            {
+                return BadRequest(ApiResponse<object>.Fail(result.Message));
+            }
+            return CreatedAtAction(nameof(GetById), new { id = result.Data.Id }, ApiResponse<object>.Ok(result.Data));
         }
 
         [HttpPut("{id}")]

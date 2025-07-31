@@ -18,9 +18,9 @@ namespace WebApplication1.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<UserProfileDto> GetUserProfileAsync(string userId)
+        public async Task<UserProfileDto> GetUserProfileAsync(string userName)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByNameAsync(userName);
             if (user == null)
             {
                 return null;
@@ -29,15 +29,26 @@ namespace WebApplication1.Application.Services
             return _mapper.Map<UserProfileDto>(user);
         }
 
-        public async Task<bool> UpdateUserProfileAsync(string userId, UpdateUserProfileDto updateUserProfileDto)
+        public async Task<bool> UpdateUserProfileAsync(string userName, UpdateUserProfileDto updateUserProfileDto)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByNameAsync(userName);
             if (user == null)
             {
                 return false;
             }
 
             _mapper.Map(updateUserProfileDto, user);
+
+            // If password fields are provided, attempt to change password
+            if (!string.IsNullOrEmpty(updateUserProfileDto.NewPassword) && !string.IsNullOrEmpty(updateUserProfileDto.CurrentPassword))
+            {
+                var changePasswordResult = await _userManager.ChangePasswordAsync(user, updateUserProfileDto.CurrentPassword, updateUserProfileDto.NewPassword);
+                if (!changePasswordResult.Succeeded)
+                {
+                    // Handle password change errors
+                    return false;
+                }
+            }
 
             var result = await _userManager.UpdateAsync(user);
             return result.Succeeded;

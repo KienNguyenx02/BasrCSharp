@@ -9961,11 +9961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "E:\\Test\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "E:\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "E:\\Test\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\WebApplication1\\obj\\",
+      "outputPath": "E:\\Test\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

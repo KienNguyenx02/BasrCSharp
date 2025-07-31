@@ -12,6 +12,10 @@ namespace WebApplication1.Domain.Entities
 
         public Role UserRole { get; set; } = Role.User;
         public string? ProfilePicture { get; set; }
+
+        // Foreign key to ApplicationUser
+        public string? ApplicationUserId { get; set; }
+        public virtual ApplicationUser? ApplicationUser { get; set; }
     }
     public enum Role
     {

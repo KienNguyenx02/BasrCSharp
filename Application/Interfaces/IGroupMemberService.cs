@@ -7,8 +7,9 @@ namespace WebApplication1.Application.Interfaces
     {
         Task<PaginatedResult<GroupMemberDto>> GetGroupMembersAsync(FilterParams filterParams);
         Task<GroupMemberDto> GetGroupMemberByIdAsync(Guid id);
-        Task<GroupMemberDto> CreateGroupMemberAsync(CreateGroupMemberDto createGroupMemberDto);
+        Task<ApiResponse<GroupMemberDto>> CreateGroupMemberAsync(CreateGroupMemberDto createGroupMemberDto);
         Task<bool> UpdateGroupMemberAsync(Guid id, UpdateGroupMemberDto updateGroupMemberDto);
         Task<bool> DeleteGroupMemberAsync(Guid id);
+        Task<IEnumerable<GroupMemberDto>> GetGroupMembersByGroupIdAsync(Guid groupId);
     }
 }
