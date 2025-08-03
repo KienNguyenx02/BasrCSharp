@@ -95,5 +95,20 @@ namespace WebApplication1.Application.Services
             await _notificationRepository.SaveChangesAsync();
             return true;
         }
+
+        public async Task CreateNotificationAsync(string userId, string title, string message, string? link = null)
+        {
+            var notification = new Notifications
+            {
+                UserId = userId,
+                Title = title,
+                Message = message,
+                Link = link,
+                CreatedAt = DateTime.UtcNow,
+                IsRead = false
+            };
+            await _notificationRepository.AddAsync(notification);
+            await _notificationRepository.SaveChangesAsync();
+        }
     }
 }

@@ -12,5 +12,7 @@ namespace WebApplication1.Application.Interfaces
         Task<ApplicationUserDto> CreateUserAsync(CreateApplicationUserDto createUserDto);
         Task<bool> UpdateUserAsync(UpdateApplicationUserDto updateUserDto);
         Task<bool> DeleteUserAsync(string userId);
+        Task<IEnumerable<UserLookupDto>> GetUsersForLookupAsync();
+        Task<bool> UpdateUserRoleAsync(UpdateUserRoleDto updateUserRoleDto);
     }
 }

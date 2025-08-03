@@ -1,6 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Application.DTOs.GroupMembers;
 using WebApplication1.Application.Interfaces;
+using WebApplication1.Domain.Entities; // Required for Group entity
+using WebApplication1.Infrastructure.Data; // Required for IBaseRepository
 using WebApplication1.Shared.ErrorCodes;
 using WebApplication1.Shared.Results;
 
@@ -8,13 +11,18 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class GroupMembersController : ControllerBase
     {
         private readonly IGroupMemberService _groupMemberService;
+        private readonly IAuthorizationService _authorizationService;
+        private readonly IBaseRepository<Group> _groupRepository;
 
-        public GroupMembersController(IGroupMemberService groupMemberService)
+        public GroupMembersController(IGroupMemberService groupMemberService, IAuthorizationService authorizationService, IBaseRepository<Group> groupRepository)
         {
             _groupMemberService = groupMemberService;
+            _authorizationService = authorizationService;
+            _groupRepository = groupRepository;
         }
 
         [HttpGet]
@@ -43,8 +51,21 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Staff")]
         public async Task<ActionResult<ApiResponse<object>>> Create([FromBody] CreateGroupMemberDto createGroupMemberDto)
         {
+            var group = await _groupRepository.GetByIdAsync(createGroupMemberDto.GroupId);
+            if (group == null)
+            {
+                return NotFound(ApiResponse<object>.Fail("Group not found."));
+            }
+
+            var authorizationResult = await _authorizationService.AuthorizeAsync(User, group, "IsGroupOwner");
+            if (!authorizationResult.Succeeded)
+            {
+                return Forbid();
+            }
+
             var result = await _groupMemberService.CreateGroupMemberAsync(createGroupMemberDto);
             if (!result.Success)
             {
@@ -54,6 +75,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Staff")]
         public async Task<ActionResult<ApiResponse<string>>> Update(Guid id, [FromBody] UpdateGroupMemberDto updateGroupMemberDto)
         {
             var result = await _groupMemberService.UpdateGroupMemberAsync(id, updateGroupMemberDto);
@@ -65,6 +87,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,Staff")]
         public async Task<ActionResult<ApiResponse<string>>> Delete(Guid id)
         {
             var result = await _groupMemberService.DeleteGroupMemberAsync(id);

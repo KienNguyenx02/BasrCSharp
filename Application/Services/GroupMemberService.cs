@@ -14,10 +14,10 @@ namespace WebApplication1.Application.Services
     public class GroupMemberService : IGroupMemberService
     {
         private readonly IBaseRepository<GroupMembers> _groupMemberRepository;
-        private readonly IBaseRepository<GroupsEntity> _groupRepository; // New: To access group details
+        private readonly IBaseRepository<Group> _groupRepository; // New: To access group details
         private readonly IMapper _mapper;
 
-        public GroupMemberService(IBaseRepository<GroupMembers> groupMemberRepository, IBaseRepository<GroupsEntity> groupRepository, IMapper mapper)
+        public GroupMemberService(IBaseRepository<GroupMembers> groupMemberRepository, IBaseRepository<Group> groupRepository, IMapper mapper)
         {
             _groupMemberRepository = groupMemberRepository;
             _groupRepository = groupRepository; // Initialize new repository

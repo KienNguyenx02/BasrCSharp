@@ -7,6 +7,7 @@ using System.Text;
 using WebApplication1.Domain.Entities;
 using WebApplication1.Application.DTOs.Users;
 using Microsoft.AspNetCore.Authorization;
+using WebApplication1.Application.Interfaces;
 
 namespace WebApplication1.Controllers
 {
@@ -17,12 +18,14 @@ namespace WebApplication1.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly IApplicationUserService _applicationUserService;
 
-        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public AuthController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IApplicationUserService applicationUserService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
+            _applicationUserService = applicationUserService;
         }
 
         [HttpPost]
@@ -34,44 +37,90 @@ namespace WebApplication1.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User already exists!" });
 
             ApplicationUser user = new() { Email = model.Email, SecurityStamp = Guid.NewGuid().ToString(), UserName = model.Username };
-            var result = await _userManager.CreateAsync(user, model.Password);
+            var result = await _userManager.CreateAsync(user, "Abc@123");
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", success = false, Message = "User creation failed! Please check user details and try again.", Errors = result.Errors });
+            }
 
-            return Ok(new { Status = "Success", Message = "User created successfully!" });
+            // Assign the default "User" role to the new user
+            if (await _roleManager.RoleExistsAsync("User"))
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+            }
+
+            return Ok(new { Status = "Success", success = true, Message = "User created successfully!" });
         }
 
         [HttpPost]
         [Route("login")]
-        [AllowAnonymous] // Add this attribute
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginDto model)
         {
-            // Bypass authentication for testing purposes
-            // Always return a successful login with a dummy token
-
-            var authClaims = new List<Claim>
+            var user = await _userManager.FindByNameAsync(model.Username);
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
-                new Claim(ClaimTypes.Name, model.Username), // Use the username from the request
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                // Add a dummy role if needed, e.g., new Claim(ClaimTypes.Role, "User")
-            };
+                var userRoles = await _userManager.GetRolesAsync(user);
 
-            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+                var authClaims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                };
 
-            var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddHours(3), // Token valid for 3 hours
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
-            );
+                foreach (var userRole in userRoles)
+                {
+                    authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                }
 
-            return Ok(new
+                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+
+                var token = new JwtSecurityToken(
+                    issuer: _configuration["JWT:ValidIssuer"],
+                    audience: _configuration["JWT:ValidAudience"],
+                    expires: DateTime.Now.AddHours(3),
+                    claims: authClaims,
+                    signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                );
+
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    expiration = token.ValidTo,
+                    roles = userRoles // Return roles to the client
+                });
+            }
+            return Unauthorized();
+        }
+
+        [HttpPut]
+        [Route("update-user-role")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UpdateUserRole([FromBody] UpdateUserRoleDto model)
+        {
+            // Ensure the new role is either "User" or "Staff"
+            if (model.NewRole != "User" && model.NewRole != "Staff" && model.NewRole != "Admin")
             {
-                token = new JwtSecurityTokenHandler().WriteToken(token),
-                expiration = token.ValidTo,
-                message = "Login successful (bypassed authentication)!"
-            });
+                return BadRequest(new { Status = "Error", success = false, Message = "Invalid role specified. Role must be 'User', 'Staff' or 'Admin'." });
+            }
+
+            try
+            {
+                var success = await _applicationUserService.UpdateUserRoleAsync(model);
+                if (success)
+                {
+                    return Ok(new { Status = "Success", success = true, Message = $"User role and information updated successfully!" });
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", success = false, Message = "Failed to update user role or information. Check if you are trying to demote an admin." });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", success = false, Message = ex.Message });
+            }
         }
     }
 }

@@ -10,10 +10,10 @@ namespace WebApplication1.Application.Services
 {
     public class GroupService : IGroupService
     {
-        private readonly IBaseRepository<GroupsEntity> _groupRepository;
+        private readonly IBaseRepository<Group> _groupRepository;
         private readonly IMapper _mapper;
 
-        public GroupService(IBaseRepository<GroupsEntity> groupRepository, IMapper mapper)
+        public GroupService(IBaseRepository<Group> groupRepository, IMapper mapper)
         {
             _groupRepository = groupRepository;
             _mapper = mapper;
@@ -36,9 +36,10 @@ namespace WebApplication1.Application.Services
             return _mapper.Map<GroupDto>(groupEntity);
         }
 
-        public async Task<GroupDto> CreateGroupAsync(CreateGroupDto createGroupDto)
+        public async Task<GroupDto> CreateGroupAsync(CreateGroupDto createGroupDto, string ownerId)
         {
-            var groupEntity = _mapper.Map<GroupsEntity>(createGroupDto);
+            var groupEntity = _mapper.Map<Group>(createGroupDto);
+            groupEntity.OwnerId = ownerId;
             await _groupRepository.AddAsync(groupEntity);
             await _groupRepository.SaveChangesAsync();
             return _mapper.Map<GroupDto>(groupEntity);
@@ -69,6 +70,18 @@ namespace WebApplication1.Application.Services
             _groupRepository.Remove(groupEntity);
             await _groupRepository.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<PaginatedResult<GroupDto>> GetGroupsByOwnerIdAsync(string ownerId, FilterParams filterParams)
+        {
+            var query = _groupRepository.Query()
+                                        .Where(g => g.OwnerId == ownerId);
+
+            query = query.ApplyFilterParams(filterParams);
+
+            var dtoQuery = _mapper.ProjectTo<GroupDto>(query);
+
+            return await dtoQuery.ToPaginatedListAsync(filterParams.PageNumber, filterParams.PageSize);
         }
     }
 }

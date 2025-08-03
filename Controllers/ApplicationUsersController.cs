@@ -18,6 +18,13 @@ namespace WebApplication1.Controllers
             _applicationUserService = applicationUserService;
         }
 
+        [HttpGet("lookup")]
+        public async Task<ActionResult<ApiResponse<IEnumerable<UserLookupDto>>>> GetUsersForLookup()
+        {
+            var users = await _applicationUserService.GetUsersForLookupAsync();
+            return Ok(ApiResponse<IEnumerable<UserLookupDto>>.Ok(users));
+        }
+
         [HttpGet]
         public async Task<ActionResult<ApiResponse<object>>> GetAllUsers([FromQuery] FilterParams filterParams)
         {

@@ -1,6 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WebApplication1.Application.DTOs.Groups;
 using WebApplication1.Application.Interfaces;
+using WebApplication1.Domain.Entities; // Required for Group entity
+using WebApplication1.Infrastructure.Data; // Required for IBaseRepository
 using WebApplication1.Shared.ErrorCodes;
 using WebApplication1.Shared.Results;
 
@@ -8,13 +12,32 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class GroupsController : ControllerBase
     {
         private readonly IGroupService _groupService;
+        private readonly IAuthorizationService _authorizationService;
+        private readonly IBaseRepository<Group> _groupRepository; // To fetch the group for authorization
 
-        public GroupsController(IGroupService groupService)
+        public GroupsController(IGroupService groupService, IAuthorizationService authorizationService, IBaseRepository<Group> groupRepository)
         {
             _groupService = groupService;
+            _authorizationService = authorizationService;
+            _groupRepository = groupRepository;
+        }
+
+        [HttpGet]
+        [Route("my-groups")]
+        [Authorize(Roles = "Admin,Staff")]
+        public async Task<ActionResult<ApiResponse<object>>> GetMyGroups([FromQuery] FilterParams filterParams)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+            var result = await _groupService.GetGroupsByOwnerIdAsync(userId, filterParams);
+            return Ok(ApiResponse<object>.Ok(result));
         }
 
         [HttpGet]
@@ -36,15 +59,34 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Staff")]
         public async Task<ActionResult<ApiResponse<object>>> Create([FromBody] CreateGroupDto createGroupDto)
         {
-            var groupDto = await _groupService.CreateGroupAsync(createGroupDto);
+            var ownerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(ownerId))
+            {
+                return Unauthorized();
+            }
+
+            var groupDto = await _groupService.CreateGroupAsync(createGroupDto, ownerId);
             return CreatedAtAction(nameof(GetById), new { id = groupDto.Id }, ApiResponse<object>.Ok(groupDto));
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<ApiResponse<string>>> Update(Guid id, [FromBody] UpdateGroupDto updateGroupDto)
         {
+            var group = await _groupRepository.GetByIdAsync(id);
+            if (group == null)
+            {
+                return NotFound(ApiResponse<string>.Fail(ErrorCode.NotFound("Group").Message));
+            }
+
+            var authorizationResult = await _authorizationService.AuthorizeAsync(User, group, "IsGroupOwner");
+            if (!authorizationResult.Succeeded)
+            {
+                return Forbid();
+            }
+
             var result = await _groupService.UpdateGroupAsync(id, updateGroupDto);
             if (!result)
             {
@@ -56,6 +98,18 @@ namespace WebApplication1.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<ApiResponse<string>>> Delete(Guid id)
         {
+            var group = await _groupRepository.GetByIdAsync(id);
+            if (group == null)
+            {
+                return NotFound(ApiResponse<string>.Fail(ErrorCode.NotFound("Group").Message));
+            }
+
+            var authorizationResult = await _authorizationService.AuthorizeAsync(User, group, "IsGroupOwner");
+            if (!authorizationResult.Succeeded)
+            {
+                return Forbid();
+            }
+
             var result = await _groupService.DeleteGroupAsync(id);
             if (!result)
             {

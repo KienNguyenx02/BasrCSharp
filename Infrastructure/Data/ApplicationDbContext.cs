@@ -12,8 +12,9 @@ namespace WebApplication1.Infrastructure.Data
 
         public DbSet<Notifications> Notifications { get; set; }
         public DbSet<EventsEnitity> Events { get; set; }
-        public DbSet<GroupsEntity> Groups { get; set; }
+        public DbSet<Group> Groups { get; set; }
         public DbSet<GroupMembers> GroupMembers { get; set; }
+        public DbSet<GroupInvitation> GroupInvitations { get; set; }
 
         public DbSet<Reminders> Reminders { get; set; }
         public DbSet<UserEventStatus> UserEventStatus { get; set; }

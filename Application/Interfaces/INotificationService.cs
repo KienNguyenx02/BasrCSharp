@@ -14,5 +14,6 @@ namespace WebApplication1.Application.Interfaces
         Task<bool> UpdateNotificationAsync(Guid id, UpdateNotificationDto updateNotificationDto);
         Task<bool> DeleteNotificationAsync(Guid id);
         Task<bool> MarkNotificationAsReadAsync(Guid id);
+        Task CreateNotificationAsync(string userId, string title, string message, string? link = null);
     }
 }
