@@ -15,5 +15,6 @@ namespace WebApplication1.Domain.Entities
         public virtual ApplicationUser Owner { get; set; }
 
         public virtual ICollection<GroupMembers> GroupMembers { get; set; }
+        public virtual ICollection<GroupJoinRequest> GroupJoinRequests { get; set; }
     }
 }

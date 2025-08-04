@@ -6,6 +6,7 @@ using WebApplication1.Domain.Entities; // Required for Group entity
 using WebApplication1.Infrastructure.Data; // Required for IBaseRepository
 using WebApplication1.Shared.ErrorCodes;
 using WebApplication1.Shared.Results;
+using System.Security.Claims;
 
 namespace WebApplication1.Controllers
 {
@@ -67,11 +68,11 @@ namespace WebApplication1.Controllers
             }
 
             var result = await _groupMemberService.CreateGroupMemberAsync(createGroupMemberDto);
-            if (!result.Success)
+            if (!result.success)
             {
-                return BadRequest(ApiResponse<object>.Fail(result.Message));
+                return BadRequest(ApiResponse<object>.Fail(result.message));
             }
-            return CreatedAtAction(nameof(GetById), new { id = result.Data.Id }, ApiResponse<object>.Ok(result.Data));
+            return CreatedAtAction(nameof(GetById), new { id = result.data.Id }, ApiResponse<object>.Ok(result.data));
         }
 
         [HttpPut("{id}")]
@@ -96,6 +97,25 @@ namespace WebApplication1.Controllers
                 return NotFound(ApiResponse<string>.Fail(ErrorCode.NotFound("GroupMember").Message));
             }
             return Ok(ApiResponse<string>.Ok("GroupMember deleted successfully."));
+        }
+
+        [HttpDelete("kick/{groupId}/{memberId}")]
+        public async Task<ActionResult<ApiResponse<string>>> KickMember(Guid groupId, Guid memberId)
+        {
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Unauthorized(ApiResponse<string>.Fail("User not authenticated."));
+            }
+
+            var result = await _groupMemberService.KickGroupMemberAsync(groupId, memberId, currentUserId);
+
+            if (!result.success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
     }
 }

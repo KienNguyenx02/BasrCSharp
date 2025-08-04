@@ -8,12 +8,13 @@ namespace WebApplication1.Application.Interfaces
 {
     public interface INotificationService
     {
-        Task<PaginatedResult<NotificationDto>> GetNotificationsAsync(FilterParams filterParams);
+        Task<PaginatedResult<NotificationDto>> GetNotificationsAsync(FilterParams filterParams, string userId);
         Task<NotificationDto> GetNotificationByIdAsync(Guid id);
         Task<NotificationDto> CreateNotificationAsync(CreateNotificationDto createNotificationDto);
         Task<bool> UpdateNotificationAsync(Guid id, UpdateNotificationDto updateNotificationDto);
         Task<bool> DeleteNotificationAsync(Guid id);
         Task<bool> MarkNotificationAsReadAsync(Guid id);
         Task CreateNotificationAsync(string userId, string title, string message, string? link = null);
+        Task<int> GetUnreadNotificationsCountAsync(string userId);
     }
 }

@@ -8,6 +8,7 @@ using WebApplication1.Application.DTOs.Notifications;
 using WebApplication1.Application.DTOs.Users; // Added this line
 using WebApplication1.Domain.Entities;
 using WebApplication1.Application.DTOs.GroupInvitations;
+using WebApplication1.Application.DTOs.GroupJoinRequest;
 
 namespace WebApplication1.Application.MappingProfiles
 {
@@ -94,6 +95,12 @@ namespace WebApplication1.Application.MappingProfiles
             CreateMap<CreateApplicationUserDto, ApplicationUser>();
             CreateMap<UpdateApplicationUserDto, ApplicationUser>();
             CreateMap<ApplicationUser, UserLookupDto>();
+
+            // GroupJoinRequest Mappings
+            CreateMap<GroupJoinRequest, GroupJoinRequestDto>()
+                .ForMember(dest => dest.GroupName, opt => opt.MapFrom(src => src.Group.GroupName))
+                .ForMember(dest => dest.RequestingUserName, opt => opt.MapFrom(src => src.RequestingUser.UserName))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
         }
     }
 }

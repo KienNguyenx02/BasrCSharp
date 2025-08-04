@@ -341,6 +341,40 @@ namespace WebApplication1.Migrations
                     b.ToTable("GroupInvitations");
                 });
 
+            modelBuilder.Entity("WebApplication1.Domain.Entities.GroupJoinRequest", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRequested")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("GroupId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RequestingUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupId");
+
+                    b.HasIndex("RequestingUserId");
+
+                    b.ToTable("GroupJoinRequests");
+                });
+
             modelBuilder.Entity("WebApplication1.Domain.Entities.GroupMembers", b =>
                 {
                     b.Property<Guid>("Id")
@@ -554,6 +588,25 @@ namespace WebApplication1.Migrations
                     b.Navigation("Inviter");
                 });
 
+            modelBuilder.Entity("WebApplication1.Domain.Entities.GroupJoinRequest", b =>
+                {
+                    b.HasOne("WebApplication1.Domain.Entities.Group", "Group")
+                        .WithMany("GroupJoinRequests")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Domain.Entities.ApplicationUser", "RequestingUser")
+                        .WithMany()
+                        .HasForeignKey("RequestingUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("RequestingUser");
+                });
+
             modelBuilder.Entity("WebApplication1.Domain.Entities.GroupMembers", b =>
                 {
                     b.HasOne("WebApplication1.Domain.Entities.Group", null)
@@ -565,6 +618,8 @@ namespace WebApplication1.Migrations
 
             modelBuilder.Entity("WebApplication1.Domain.Entities.Group", b =>
                 {
+                    b.Navigation("GroupJoinRequests");
+
                     b.Navigation("GroupMembers");
                 });
 #pragma warning restore 612, 618

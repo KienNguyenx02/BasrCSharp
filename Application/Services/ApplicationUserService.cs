@@ -29,7 +29,7 @@ namespace WebApplication1.Application.Services
 
             if (!string.IsNullOrWhiteSpace(filterParams.SearchTerm))
             {
-                query = query.Where(u => u.UserName.Contains(filterParams.SearchTerm) || u.Email.Contains(filterParams.SearchTerm));
+                query = query.Where(u => (u.UserName != null && u.UserName.Contains(filterParams.SearchTerm)) || (u.Email != null && u.Email.Contains(filterParams.SearchTerm)));
             }
 
             query = query.ApplyFilterParams(filterParams);
@@ -58,7 +58,7 @@ namespace WebApplication1.Application.Services
         public async Task<ApplicationUserDto> CreateUserAsync(CreateApplicationUserDto createUserDto)
         {
             var user = new ApplicationUser { UserName = createUserDto.UserName, Email = createUserDto.Email };
-            var result = await _userManager.CreateAsync(user, "Abc@123");
+            var result = await _userManager.CreateAsync(user, "Abc@123"); // Default password, should be changed later
 
             if (!result.Succeeded)
             {
@@ -87,8 +87,8 @@ namespace WebApplication1.Application.Services
                 return false;
             }
 
-            user.UserName = updateUserDto.UserName ?? user.UserName;
-            user.Email = updateUserDto.Email ?? user.Email;
+            if (updateUserDto.UserName != null) user.UserName = updateUserDto.UserName;
+            if (updateUserDto.Email != null) user.Email = updateUserDto.Email;
 
             if (!string.IsNullOrWhiteSpace(updateUserDto.NewPassword))
             {

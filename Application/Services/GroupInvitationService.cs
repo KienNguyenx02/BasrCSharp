@@ -38,7 +38,9 @@ namespace WebApplication1.Application.Services
 
         public async Task<ApiResponse<GroupInvitationDto>> CreateGroupInvitationAsync(CreateGroupInvitationDto dto, string inviterId)
         {
-            var group = await _groupRepository.GetByIdAsync(dto.GroupId);
+            try
+            {
+                var group = await _groupRepository.Query().Include(g => g.Owner).FirstOrDefaultAsync(g => g.Id == dto.GroupId);
             if (group == null)
             {
                 return ApiResponse<GroupInvitationDto>.Fail("Group not found.");
@@ -58,35 +60,45 @@ namespace WebApplication1.Application.Services
                 return ApiResponse<GroupInvitationDto>.Fail("User is already a member of this group.");
             }
 
-            // Check if there's a pending invitation already
-            var existingInvitation = await _invitationRepository.Query()
-                                                                .AnyAsync(inv => inv.GroupId == dto.GroupId && inv.InvitedUserId == invitedUser.Id && inv.Status == InvitationStatus.Pending);
-            if (existingInvitation)
+            // Directly add user to group members
+            var groupMember = new GroupMembers
             {
-                return ApiResponse<GroupInvitationDto>.Fail("A pending invitation already exists for this user and group.");
-            }
+                GroupId = dto.GroupId,
+                UserId = Guid.Parse(invitedUser.Id),
+                GroupRole = GroupRole.Member // Default role for new members
+            };
+            await _groupMemberRepository.AddAsync(groupMember);
+            await _groupMemberRepository.SaveChangesAsync();
 
+            // Create an invitation record with Accepted status
             var invitation = new GroupInvitation
             {
                 GroupId = dto.GroupId,
                 InviterId = inviterId,
                 InvitedUserId = invitedUser.Id,
-                Status = InvitationStatus.Pending,
+                Status = InvitationStatus.Pending, // Automatically accepted
                 DateSent = DateTime.UtcNow
             };
 
             await _invitationRepository.AddAsync(invitation);
             await _invitationRepository.SaveChangesAsync();
 
-            // Send notification to the invited user
+            // Send notification to the invited user that they have been added
             await _notificationService.CreateNotificationAsync(
                 invitedUser.Id,
-                "New Group Invitation",
-                $"You have been invited to join the group '{group.GroupName}' by {group.Owner.UserName}.",
-                $"/invitations/{invitation.Id}" // Link to respond to the invitation
+                "Group Membership Confirmation",
+                $"You have been automatically added to the group '{group.GroupName}' by {group.Owner.UserName}.",
+                $"/groups/{group.Id}" // Link to the group
             );
 
             return ApiResponse<GroupInvitationDto>.Ok(_mapper.Map<GroupInvitationDto>(invitation));
+            }
+            
+            catch (Exception ex)
+            {
+                return ApiResponse<GroupInvitationDto>.Fail($"An error occurred while creating the invitation: {ex.Message}");
+            }
+            
         }
 
         public async Task<ApiResponse<string>> RespondToGroupInvitationAsync(Guid invitationId, string invitedUserId, RespondGroupInvitationDto dto)
@@ -101,26 +113,12 @@ namespace WebApplication1.Application.Services
                 return ApiResponse<string>.Fail("Invitation not found or already responded to.");
             }
 
-            if (dto.Accept)
+            if (invitation.Status == InvitationStatus.Accepted)
             {
-                // Add user to group members
-                var groupMember = new GroupMembers
-                {
-                    GroupId = invitation.GroupId,
-                    UserId = Guid.Parse(invitedUserId), // Convert string to Guid
-                    GroupRole = GroupRole.Member // Default role for new members
-                };
-                await _groupMemberRepository.AddAsync(groupMember);
-                invitation.Status = InvitationStatus.Accepted;
-
-                // Notify inviter that the invitation was accepted
-                await _notificationService.CreateNotificationAsync(
-                    invitation.InviterId,
-                    "Group Invitation Accepted",
-                    $"{invitation.InvitedUser.UserName} has accepted your invitation to join '{invitation.Group.GroupName}'."
-                );
+                return ApiResponse<string>.Fail("Invitation has already been accepted.");
             }
-            else
+
+            if (!dto.Accept)
             {
                 invitation.Status = InvitationStatus.Declined;
 
@@ -131,24 +129,22 @@ namespace WebApplication1.Application.Services
                     $"{invitation.InvitedUser.UserName} has declined your invitation to join '{invitation.Group.GroupName}'."
                 );
             }
+            else
+            {
+                return ApiResponse<string>.Fail("Invitations are now automatically accepted upon creation. This endpoint is only for declining.");
+            }
 
             _invitationRepository.Update(invitation);
             await _invitationRepository.SaveChangesAsync();
-            await _groupMemberRepository.SaveChangesAsync(); // Save changes for group member if accepted
 
-            return ApiResponse<string>.Ok(dto.Accept ? "Invitation accepted." : "Invitation declined.");
+            return ApiResponse<string>.Ok("Invitation declined.");
         }
 
         public async Task<PaginatedResult<GroupInvitationDto>> GetPendingInvitationsForUserAsync(string userId, FilterParams filterParams)
         {
-            var query = _invitationRepository.Query()
-                                            .Where(inv => inv.InvitedUserId == userId && inv.Status == InvitationStatus.Pending)
-                                            .Include(inv => inv.Group)
-                                            .Include(inv => inv.Inviter);
-
-            var dtoQuery = _mapper.ProjectTo<GroupInvitationDto>(query);
-
-            return await dtoQuery.ToPaginatedListAsync(filterParams.PageNumber, filterParams.PageSize);
+            // Since invitations are now automatically accepted, there are no pending invitations.
+            // This method can be removed if not needed, or repurposed to get accepted invitations.
+            return await Task.FromResult(new PaginatedResult<GroupInvitationDto>(new List<GroupInvitationDto>(), 0, filterParams.PageNumber, filterParams.PageSize));
         }
 
         public async Task<PaginatedResult<GroupInvitationDto>> GetSentInvitationsByInviterAsync(string inviterId, FilterParams filterParams)

@@ -2,26 +2,34 @@ using AutoMapper;
 using WebApplication1.Application.DTOs.GroupMembers;
 using WebApplication1.Application.Interfaces;
 using WebApplication1.Domain.Entities;
-using Microsoft.EntityFrameworkCore; // Added this line
-
+using Microsoft.EntityFrameworkCore; 
 using WebApplication1.Shared.Results;
 using WebApplication1.Shared.Extensions;
 using WebApplication1.Infrastructure.Data;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication1.Application.Services
 {
     public class GroupMemberService : IGroupMemberService
     {
         private readonly IBaseRepository<GroupMembers> _groupMemberRepository;
-        private readonly IBaseRepository<Group> _groupRepository; // New: To access group details
+        private readonly IBaseRepository<Group> _groupRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly INotificationService _notificationService;
         private readonly IMapper _mapper;
 
-        public GroupMemberService(IBaseRepository<GroupMembers> groupMemberRepository, IBaseRepository<Group> groupRepository, IMapper mapper)
+        public GroupMemberService(
+            IBaseRepository<GroupMembers> groupMemberRepository, 
+            IBaseRepository<Group> groupRepository, 
+            UserManager<ApplicationUser> userManager,
+            IMapper mapper, 
+            INotificationService notificationService)
         {
             _groupMemberRepository = groupMemberRepository;
-            _groupRepository = groupRepository; // Initialize new repository
+            _groupRepository = groupRepository;
+            _userManager = userManager;
             _mapper = mapper;
+            _notificationService = notificationService;
         }
 
         public async Task<PaginatedResult<GroupMemberDto>> GetGroupMembersAsync(FilterParams filterParams)
@@ -96,9 +104,75 @@ namespace WebApplication1.Application.Services
         public async Task<IEnumerable<GroupMemberDto>> GetGroupMembersByGroupIdAsync(Guid groupId)
         {
             var groupMembers = await _groupMemberRepository.Query()
-                                            .Where(gm => gm.GroupId == groupId)
-                                            .ToListAsync();
-            return _mapper.Map<IEnumerable<GroupMemberDto>>(groupMembers);
+                .Where(gm => gm.GroupId == groupId)
+                .ToListAsync();
+
+            var memberDtos = new List<GroupMemberDto>();
+            foreach (var member in groupMembers)
+            {
+                var user = await _userManager.FindByIdAsync(member.UserId.ToString());
+                if (user != null)
+                {
+                    memberDtos.Add(new GroupMemberDto
+                    {
+                        Id = member.Id,
+                        GroupId = member.GroupId,
+                        UserId = member.UserId,
+                        UserName = user.UserName
+                    });
+                }
+            }
+
+            return memberDtos;
+        }
+
+        public async Task<ApiResponse<string>> KickGroupMemberAsync(Guid groupId, Guid memberId, string currentUserId)
+        {
+            try
+            {
+                var group = await _groupRepository.Query()
+                                                .Include(g => g.Owner)
+                                                .FirstOrDefaultAsync(g => g.Id == groupId);
+
+                if (group == null)
+                {
+                    return ApiResponse<string>.Fail("Group not found.");
+                }
+
+                if (group.OwnerId != currentUserId)
+                {
+                    return ApiResponse<string>.Fail("Only the group owner can kick members.");
+                }
+
+                var memberToKick = await _groupMemberRepository.Query()
+                    .FirstOrDefaultAsync(gm => gm.GroupId == groupId && gm.UserId == memberId);
+
+                if (memberToKick == null)
+                {
+                    return ApiResponse<string>.Fail("Member not found in this group.");
+                }
+
+                if (memberToKick.UserId.ToString() == currentUserId)
+                {
+                    return ApiResponse<string>.Fail("Group owner cannot kick themselves.");
+                }
+
+                _groupMemberRepository.Remove(memberToKick);
+                await _groupMemberRepository.SaveChangesAsync();
+
+                await _notificationService.CreateNotificationAsync(
+                    memberToKick.UserId.ToString(),
+                    "You have been kicked from a group",
+                    $"You have been kicked from the group '{group.GroupName}' by the owner.",
+                    $"/groups"
+                );
+
+                return ApiResponse<string>.Ok("Member kicked successfully.");
+            }
+            catch (Exception ex)
+            {
+                return ApiResponse<string>.Fail($"An error occurred while kicking the member: {ex.Message}");
+            }
         }
     }
 }
