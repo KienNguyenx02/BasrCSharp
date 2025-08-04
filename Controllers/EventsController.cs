@@ -3,6 +3,8 @@ using WebApplication1.Application.DTOs.Events;
 using WebApplication1.Application.Interfaces;
 using WebApplication1.Shared.ErrorCodes;
 using WebApplication1.Shared.Results;
+using Microsoft.AspNetCore.SignalR;
+using WebApplication1.Hubs;
 
 namespace WebApplication1.Controllers
 {
@@ -11,10 +13,12 @@ namespace WebApplication1.Controllers
     public class EventsController : ControllerBase
     {
         private readonly IEventService _eventService;
+        private readonly IHubContext<EventHub> _hubContext;
 
-        public EventsController(IEventService eventService)
+        public EventsController(IEventService eventService, IHubContext<EventHub> hubContext)
         {
             _eventService = eventService;
+            _hubContext = hubContext;
         }
 
         [HttpGet]
@@ -39,6 +43,7 @@ namespace WebApplication1.Controllers
         public async Task<ActionResult<ApiResponse<object>>> Create([FromBody] CreateEventDto createEventDto)
         {
             var eventDto = await _eventService.CreateEventAsync(createEventDto);
+            await _hubContext.Clients.All.SendAsync("ReceiveEventUpdate", "EventCreated", eventDto);
             return CreatedAtAction(nameof(GetById), new { id = eventDto.Id }, ApiResponse<object>.Ok(eventDto));
         }
 
@@ -50,6 +55,8 @@ namespace WebApplication1.Controllers
             {
                 return NotFound(ApiResponse<string>.Fail(ErrorCode.NotFound("Event").Message));
             }
+            var updatedEvent = await _eventService.GetEventByIdAsync(id);
+            await _hubContext.Clients.All.SendAsync("ReceiveEventUpdate", "EventUpdated", updatedEvent);
             return Ok(ApiResponse<string>.Ok("Event updated successfully."));
         }
 
@@ -61,6 +68,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound(ApiResponse<string>.Fail(ErrorCode.NotFound("Event").Message));
             }
+            await _hubContext.Clients.All.SendAsync("ReceiveEventUpdate", "EventDeleted", id);
             return Ok(ApiResponse<string>.Ok("Event deleted successfully."));
         }
     }

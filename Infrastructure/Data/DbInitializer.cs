@@ -37,6 +37,23 @@ namespace WebApplication1.Infrastructure.Data
                     await userManager.AddToRoleAsync(newAdminUser, "Admin");
                 }
             }
+
+            // Create 10 additional users (user6 to user16)
+            for (int i = 6; i <= 16; i++)
+            {
+                var userName = $"user{i}";
+                var userEmail = $"user{i}@example.com";
+                var existingUser = await userManager.FindByEmailAsync(userEmail);
+                if (existingUser == null)
+                {
+                    var newUser = new ApplicationUser { UserName = userName, Email = userEmail, EmailConfirmed = true };
+                    var result = await userManager.CreateAsync(newUser, "Admin@123");
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(newUser, "User");
+                    }
+                }
+            }
         }
     }
 }

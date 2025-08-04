@@ -58,7 +58,7 @@ namespace WebApplication1.Application.Services
         public async Task<ApplicationUserDto> CreateUserAsync(CreateApplicationUserDto createUserDto)
         {
             var user = new ApplicationUser { UserName = createUserDto.UserName, Email = createUserDto.Email };
-            var result = await _userManager.CreateAsync(user, "Abc@123");
+            var result = await _userManager.CreateAsync(user, createUserDto.Password);
 
             if (!result.Succeeded)
             {

@@ -75,10 +75,22 @@ namespace WebApplication1.Controllers
                 return NotFound(ApiResponse<string>.Fail("Invitation not found."));
             }
 
+            // If the invitation is already accepted, prevent further action
+            if (invitation.Status == Domain.Enums.InvitationStatus.Accepted)
+            {
+                return BadRequest(ApiResponse<string>.Fail("This invitation has already been accepted automatically."));
+            }
+
             var authorizationResult = await _authorizationService.AuthorizeAsync(User, invitation, "IsInvitedUser");
             if (!authorizationResult.Succeeded)
             {
                 return Forbid();
+            }
+
+            // Only allow declining, as acceptance is now automatic
+            if (dto.Accept)
+            {
+                return BadRequest(ApiResponse<string>.Fail("Invitations are automatically accepted. You can only decline."));
             }
 
             var result = await _groupInvitationService.RespondToGroupInvitationAsync(invitationId, invitedUserId, dto);
@@ -89,18 +101,7 @@ namespace WebApplication1.Controllers
             return Ok(ApiResponse<string>.Ok(result.Message));
         }
 
-        [HttpGet]
-        [Route("pending")]
-        public async Task<ActionResult<ApiResponse<PaginatedResult<GroupInvitationDto>>>> GetPendingInvitations([FromQuery] FilterParams filterParams)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-            {
-                return Unauthorized();
-            }
-            var result = await _groupInvitationService.GetPendingInvitationsForUserAsync(userId, filterParams);
-            return Ok(ApiResponse<PaginatedResult<GroupInvitationDto>>.Ok(result));
-        }
+        
 
         [HttpGet]
         [Route("sent")]

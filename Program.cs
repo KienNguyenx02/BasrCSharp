@@ -59,6 +59,20 @@ namespace WebApplication1
                 };
                 options.Events = new JwtBearerEvents
                 {
+                    OnMessageReceived = context =>
+                    {
+                        var accessToken = context.Request.Query["access_token"];
+
+                        // If the request is for our hub...
+                        var path = context.HttpContext.Request.Path;
+                        if (!string.IsNullOrEmpty(accessToken) &&
+                            (path.StartsWithSegments("/eventHub")))
+                        {
+                            // Read the token out of the query string
+                            context.Token = accessToken;
+                        }
+                        return Task.CompletedTask;
+                    },
                     OnChallenge = async context =>
                     {
                         context.HandleResponse();
@@ -113,15 +127,17 @@ namespace WebApplication1
 
             
 
-            builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>());
+            builder.Services.AddControllers();
+builder.Services.AddSignalR();
 
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(policy =>
                 {
-                    policy.AllowAnyOrigin()
+                    policy.WithOrigins("http://localhost:3000")
                           .AllowAnyMethod()
-                          .AllowAnyHeader();
+                          .AllowAnyHeader()
+                          .AllowCredentials();
                 });
             });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -168,38 +184,7 @@ namespace WebApplication1
             app.UseCors();
 
             app.UseWebSockets();
-
-            
-
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Path == "/ws")
-                {
-                    if (context.WebSockets.IsWebSocketRequest)
-                    {
-                        using var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-                        var buffer = new byte[1024 * 4];
-                        var receiveResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), context.RequestAborted);
-
-                        while (!receiveResult.CloseStatus.HasValue)
-                        {
-                            // Echo the message back
-                            await webSocket.SendAsync(new ArraySegment<byte>(buffer, 0, receiveResult.Count), receiveResult.MessageType, receiveResult.EndOfMessage, context.RequestAborted);
-                            receiveResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), context.RequestAborted);
-                        }
-
-                        await webSocket.CloseAsync(receiveResult.CloseStatus.Value, receiveResult.CloseStatusDescription, context.RequestAborted);
-                    }
-                    else
-                    {
-                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                    }
-                }
-                else
-                {
-                    await next();
-                }
-            });
+            app.MapHub<WebApplication1.Hubs.EventHub>("/eventHub");
 
             app.UseGlobalExceptionHandling();
 
