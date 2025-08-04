@@ -113,6 +113,7 @@ namespace WebApplication1
             builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddScoped<IExcelService, ExcelService>();
             builder.Services.AddScoped<IGroupInvitationService, GroupInvitationService>(); // Add this line
+            builder.Services.AddScoped<IGroupJoinRequestService, GroupJoinRequestService>();
             builder.Services.AddMemoryCache();
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
@@ -134,12 +135,13 @@ builder.Services.AddSignalR();
             {
                 options.AddDefaultPolicy(policy =>
                 {
-                    policy.WithOrigins("http://localhost:3000")
-                          .AllowAnyMethod()
+                    policy.WithOrigins("http://localhost:3000") // The origin of the React app
                           .AllowAnyHeader()
-                          .AllowCredentials();
+                          .AllowAnyMethod()
+                          .AllowCredentials(); // Important for SignalR
                 });
             });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -179,17 +181,19 @@ builder.Services.AddSignalR();
 
             app.UseHttpsRedirection();
 
+            app.UseCors(); // Apply CORS policy early
+
             app.UseStaticFiles();
 
-            app.UseCors();
+            app.UseRouting(); // Add UseRouting before UseAuthentication/UseAuthorization
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseWebSockets();
             app.MapHub<WebApplication1.Hubs.EventHub>("/eventHub");
 
             app.UseGlobalExceptionHandling();
-
-            app.UseAuthentication();
-            app.UseAuthorization();
 
 
             app.MapControllers();

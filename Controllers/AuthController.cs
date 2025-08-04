@@ -34,13 +34,13 @@ namespace WebApplication1.Controllers
         {
             var userExists = await _userManager.FindByNameAsync(model.Username);
             if (userExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User already exists!" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "User already exists!" });
 
             ApplicationUser user = new() { Email = model.Email, SecurityStamp = Guid.NewGuid().ToString(), UserName = model.Username };
             var result = await _userManager.CreateAsync(user, "Abc@123");
             if (!result.Succeeded)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", success = false, Message = "User creation failed! Please check user details and try again.", Errors = result.Errors });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "User creation failed! Please check user details and try again.", errors = result.Errors });
             }
 
             // Assign the default "User" role to the new user
@@ -49,7 +49,7 @@ namespace WebApplication1.Controllers
                 await _userManager.AddToRoleAsync(user, "User");
             }
 
-            return Ok(new { Status = "Success", success = true, Message = "User created successfully!" });
+            return Ok(new { success = true, message = "User created successfully!" });
         }
 
         [HttpPost]
@@ -102,7 +102,7 @@ namespace WebApplication1.Controllers
             // Ensure the new role is either "User" or "Staff"
             if (model.NewRole != "User" && model.NewRole != "Staff" && model.NewRole != "Admin")
             {
-                return BadRequest(new { Status = "Error", success = false, Message = "Invalid role specified. Role must be 'User', 'Staff' or 'Admin'." });
+                return BadRequest(new { success = false, message = "Invalid role specified. Role must be 'User', 'Staff' or 'Admin'." });
             }
 
             try
@@ -110,16 +110,16 @@ namespace WebApplication1.Controllers
                 var success = await _applicationUserService.UpdateUserRoleAsync(model);
                 if (success)
                 {
-                    return Ok(new { Status = "Success", success = true, Message = $"User role and information updated successfully!" });
+                    return Ok(new { success = true, message = $"User role and information updated successfully!" });
                 }
                 else
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", success = false, Message = "Failed to update user role or information. Check if you are trying to demote an admin." });
+                    return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Failed to update user role or information. Check if you are trying to demote an admin." });
                 }
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", success = false, Message = ex.Message });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = ex.Message });
             }
         }
     }

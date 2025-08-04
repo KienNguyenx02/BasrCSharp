@@ -10,8 +10,6 @@ namespace WebApplication1.Application.DTOs.Users
         [EmailAddress]
         public string Email { get; set; }
         public string NewRole { get; set; }
-        [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
+     
     }
 }

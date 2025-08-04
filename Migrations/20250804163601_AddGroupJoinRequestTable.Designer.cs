@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using WebApplication1.Infrastructure.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250804163601_AddGroupJoinRequestTable")]
+    partial class AddGroupJoinRequestTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -591,7 +594,7 @@ namespace WebApplication1.Migrations
             modelBuilder.Entity("WebApplication1.Domain.Entities.GroupJoinRequest", b =>
                 {
                     b.HasOne("WebApplication1.Domain.Entities.Group", "Group")
-                        .WithMany("GroupJoinRequests")
+                        .WithMany()
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -618,8 +621,6 @@ namespace WebApplication1.Migrations
 
             modelBuilder.Entity("WebApplication1.Domain.Entities.Group", b =>
                 {
-                    b.Navigation("GroupJoinRequests");
-
                     b.Navigation("GroupMembers");
                 });
 #pragma warning restore 612, 618

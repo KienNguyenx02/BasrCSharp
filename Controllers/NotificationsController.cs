@@ -5,6 +5,7 @@ using WebApplication1.Application.DTOs.Notifications;
 using WebApplication1.Application.Interfaces;
 using WebApplication1.Shared.ErrorCodes;
 using WebApplication1.Shared.Results;
+using System.Security.Claims;
 
 namespace WebApplication1.Controllers
 {
@@ -22,7 +23,12 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<ActionResult<ApiResponse<object>>> Get([FromQuery] FilterParams filterParams)
         {
-            var result = await _notificationService.GetNotificationsAsync(filterParams);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+            var result = await _notificationService.GetNotificationsAsync(filterParams, userId);
             return Ok(ApiResponse<object>.Ok(result));
         }
 
@@ -75,6 +81,18 @@ namespace WebApplication1.Controllers
                 return NotFound(ApiResponse<string>.Fail(ErrorCode.NotFound("Notification").Message));
             }
             return Ok(ApiResponse<string>.Ok("Notification marked as read successfully."));
+        }
+
+        [HttpGet("count")]
+        public async Task<ActionResult<ApiResponse<int>>> GetNotificationsCount()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized(ApiResponse<int>.Fail("User not authenticated."));
+            }
+            var count = await _notificationService.GetUnreadNotificationsCountAsync(userId);
+            return Ok(ApiResponse<int>.Ok(count));
         }
     }
 }

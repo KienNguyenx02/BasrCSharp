@@ -11,5 +11,6 @@ namespace WebApplication1.Application.Interfaces
         Task<bool> UpdateGroupMemberAsync(Guid id, UpdateGroupMemberDto updateGroupMemberDto);
         Task<bool> DeleteGroupMemberAsync(Guid id);
         Task<IEnumerable<GroupMemberDto>> GetGroupMembersByGroupIdAsync(Guid groupId);
+        Task<ApiResponse<string>> KickGroupMemberAsync(Guid groupId, Guid memberId, string currentUserId);
     }
 }

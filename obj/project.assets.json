@@ -10743,26 +10743,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ntdbm\\.nuget\\packages\\": {},
-    "E:\\DEVEXPRESS\\Components\\Offline Packages": {},
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DALTWNEW\\BasrCSharp\\WebApplication1.csproj",
+      "projectUniqueName": "E:\\DALTWNEW\\DALTWNEW\\BasrCSharp\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "E:\\DALTWNEW\\BasrCSharp\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\ntdbm\\.nuget\\packages\\",
-      "outputPath": "E:\\DALTWNEW\\BasrCSharp\\obj\\",
+      "projectPath": "E:\\DALTWNEW\\DALTWNEW\\BasrCSharp\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "E:\\DALTWNEW\\DALTWNEW\\BasrCSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\DEVEXPRESS\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ntdbm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10771,7 +10768,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "E:\\DEVEXPRESS\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

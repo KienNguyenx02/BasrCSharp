@@ -38,7 +38,9 @@ namespace WebApplication1.Application.Services
 
         public async Task<ApiResponse<GroupInvitationDto>> CreateGroupInvitationAsync(CreateGroupInvitationDto dto, string inviterId)
         {
-            var group = await _groupRepository.GetByIdAsync(dto.GroupId);
+            try
+            {
+                var group = await _groupRepository.Query().Include(g => g.Owner).FirstOrDefaultAsync(g => g.Id == dto.GroupId);
             if (group == null)
             {
                 return ApiResponse<GroupInvitationDto>.Fail("Group not found.");
@@ -74,7 +76,7 @@ namespace WebApplication1.Application.Services
                 GroupId = dto.GroupId,
                 InviterId = inviterId,
                 InvitedUserId = invitedUser.Id,
-                Status = InvitationStatus.Accepted, // Automatically accepted
+                Status = InvitationStatus.Pending, // Automatically accepted
                 DateSent = DateTime.UtcNow
             };
 
@@ -90,6 +92,13 @@ namespace WebApplication1.Application.Services
             );
 
             return ApiResponse<GroupInvitationDto>.Ok(_mapper.Map<GroupInvitationDto>(invitation));
+            }
+            
+            catch (Exception ex)
+            {
+                return ApiResponse<GroupInvitationDto>.Fail($"An error occurred while creating the invitation: {ex.Message}");
+            }
+            
         }
 
         public async Task<ApiResponse<string>> RespondToGroupInvitationAsync(Guid invitationId, string invitedUserId, RespondGroupInvitationDto dto)

@@ -52,11 +52,11 @@ namespace WebApplication1.Controllers
             }
 
             var result = await _groupInvitationService.CreateGroupInvitationAsync(dto, inviterId);
-            if (!result.Success)
+            if (!result.success)
             {
-                return BadRequest(ApiResponse<GroupInvitationDto>.Fail(result.Message));
+                return BadRequest(ApiResponse<GroupInvitationDto>.Fail(result.message));
             }
-            return Ok(ApiResponse<GroupInvitationDto>.Ok(result.Data));
+            return Ok(ApiResponse<GroupInvitationDto>.Ok(result.data));
         }
 
         [HttpPost]
@@ -94,11 +94,11 @@ namespace WebApplication1.Controllers
             }
 
             var result = await _groupInvitationService.RespondToGroupInvitationAsync(invitationId, invitedUserId, dto);
-            if (!result.Success)
+            if (!result.success)
             {
-                return BadRequest(ApiResponse<string>.Fail(result.Message));
+                return BadRequest(ApiResponse<string>.Fail(result.message));
             }
-            return Ok(ApiResponse<string>.Ok(result.Message));
+            return Ok(ApiResponse<string>.Ok(result.message));
         }
 
         

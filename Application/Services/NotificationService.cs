@@ -23,13 +23,13 @@ namespace WebApplication1.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<PaginatedResult<NotificationDto>> GetNotificationsAsync(FilterParams filterParams)
+        public async Task<PaginatedResult<NotificationDto>> GetNotificationsAsync(FilterParams filterParams, string userId)
         {
-            var query = _notificationRepository.Query();
+            var query = _notificationRepository.Query().Where(n => n.UserId == userId);
 
             if (!string.IsNullOrWhiteSpace(filterParams.SearchTerm))
             {
-                query = query.Where(n => n.Message.Contains(filterParams.SearchTerm));
+                query = query.Where(n => n.Message != null && n.Message.Contains(filterParams.SearchTerm));
             }
 
             query = query.ApplyFilterParams(filterParams);
@@ -109,6 +109,12 @@ namespace WebApplication1.Application.Services
             };
             await _notificationRepository.AddAsync(notification);
             await _notificationRepository.SaveChangesAsync();
+        }
+
+        public async Task<int> GetUnreadNotificationsCountAsync(string userId)
+        {
+            return await _notificationRepository.Query()
+                .CountAsync(n => n.UserId == userId && !n.IsRead);
         }
     }
 }

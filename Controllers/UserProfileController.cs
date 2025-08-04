@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
             var userProfile = await _userProfileService.GetUserProfileAsync(userName); // Pass userName
             if (userProfile == null)
             {
-                return NotFound(ApiResponse<object>.Fail($"User profile not found.{ErrorCode.NotFound}"));
+                return NotFound(ApiResponse<object>.Fail($"User profile not found.{ErrorCode.NotFound("User").Message}"));
             }
 
             return Ok(ApiResponse<object>.Ok(userProfile));
@@ -51,7 +51,7 @@ namespace WebApplication1.Controllers
             var result = await _userProfileService.UpdateUserProfileAsync(userName, updateUserProfileDto); // Pass userName
             if (!result)
             {
-                return BadRequest(ApiResponse<object>.Fail($"Failed to update user profile.{ErrorCode.ValidationError}"));
+                return BadRequest(ApiResponse<object>.Fail($"Failed to update user profile.{ErrorCode.ValidationError.Message}"));
             }
 
             return Ok(ApiResponse<string>.Ok("User profile updated successfully."));
